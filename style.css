@@ -1,0 +1,366 @@
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 22px;
+    height: 17px;
+    cursor: pointer;
+    position: fixed;
+    top: 35px;
+    right: 30px;
+    z-index: 100;
+}
+
+/* LIGHT MODE */
+
+.line {
+    height: 1.6px;
+    background-color: #000000;
+    width: 100%;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+.hamburger.active .line:nth-child(1) {
+    transform: translateY(5.5px) rotate(45deg);
+}
+
+.hamburger.active .line:nth-child(2) {
+    opacity: 0; /* Middle line fades out */
+}
+
+.hamburger.active .line:nth-child(3) {
+    transform: translateY(-5.5px) rotate(-45deg);
+}
+
+#menu-section {
+    display: none;
+    height: 100vh;
+    position: fixed;
+    background-color: #facde5;
+    top:70px;
+    left: 0;
+    width: 100vw;
+    z-index: 9999;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.menu li {
+    margin: 25px;
+}
+
+.menu a {
+    text-decoration: none;
+    font-size: 30px;
+    color: #000000;
+    font-weight: bold;
+
+    position: relative; /* Necessary for positioning the pseudo-element */
+    display: inline-block; /* Ensure the background size applies to the text */
+    background-image: linear-gradient(to right, #000000 0%, #000000 0%); /* Start with no underline */
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 0% 2px; /* Initially no width for the underline */
+    transition: background-size 0.3s ease; /* Animate the underline expansion */
+}
+
+#menu-section.active {
+    display: block;
+}
+
+.menu a:hover {
+    text-decoration: none; /* Remove default underline */
+    background-size: 100% 2px; /* Expand the underline to full width */
+}
+
+body.light{
+    background-color: #facde5;
+    color: #000000;
+    text-align: center;
+    font-family: 'Garamond', sans-serif;
+}
+
+h1 {
+    text-align: left;
+    font-size: 40px;
+    position: relative;
+}
+
+h1 a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.main-container {
+    display: flex;                /* Set children side by side */
+    align-items: flex-start;          /* Vertically align items */
+    gap: 20px;                    /* Add space between the left and right sections */
+    padding: 20px;                /* Optional: Add padding around the container */
+}
+
+.image-text-container {
+    text-align: left;
+    width: fit-content;           /* Adjust width to fit the content */
+    flex-shrink: 0;               /* Prevent shrinking of the container */
+}
+
+.left-image {
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+#edu {
+    text-align: center;
+    margin-top: 12px;
+}
+
+/* Right section (ABOUT and paragraph) */
+.right-text-container {
+    flex: 1;                      /* Allow the right section to take up remaining space */
+    text-align: left;             /* Align text to the left */
+}
+
+/* Styling for the ABOUT heading */
+#about {
+    text-align: center;           /* Center the ABOUT heading horizontally */
+    margin-bottom: 10px;          /* Add some spacing below the heading */
+}
+
+footer {
+    position: relative;
+    left:0px;
+    bottom: 30px;
+    height:30px;
+    width:100%;
+  }
+
+  hr {
+    border: 0.2px solid black;
+  }
+
+.social-links a {
+    text-decoration: none;
+    margin: 3px;
+}
+
+#mode {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 13px;
+    background-color: transparent;
+    color: #000000;
+    border-radius: 25px;
+    border-width: 2px;
+    border-color: #000000;
+    font-family: 'Garamond', sans-serif;
+    cursor: pointer;
+    z-index: 99999;
+}
+
+::selection {
+    background-color: #d099e2; /* Set the background color of the selected text */
+}
+/* DARK MODE */
+
+body.dark #line {
+    height: 2px;
+    background-color: hotpink;
+    width: 100%;
+    border-radius: 5px;
+}
+
+body.dark{
+    background-color: #000000;
+    color: hotpink;
+    text-align: center;
+    font-family: 'Garamond', sans-serif;
+}
+
+body.dark #mode {
+    background-color: transparent;
+    color: hotpink;
+    border-color: hotpink;
+    outline:none;
+    font-family: 'Garamond', sans-serif;
+    z-index: 99999;  
+}
+
+body.dark #menu a {
+    text-decoration: none;
+    color: hotpink;
+    font-weight: bold;
+}
+
+body.dark #menu-section {
+    background-color: #000000;
+}
+
+body.dark #h1 {
+        text-decoration: none;
+        color: hotpink;
+}
+
+body.dark .menu a {
+    text-decoration: none; /* Remove default underline */
+    font-size: 30px;
+    color: hotpink;
+    font-weight: bold;
+    position: relative; /* Necessary for positioning the pseudo-element */
+    display: inline-block; /* Ensure the background size applies to the text */
+    background-image: linear-gradient(to right, hotpink 0%, hotpink 0%); /* Start with no underline */
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 0% 2px; /* Initially no width for the underline */
+    transition: background-size 0.3s ease; /* Animate the underline expansion */
+}
+
+body.dark .menu a:hover {
+    text-decoration: none; /* Remove default underline */
+    background-size: 100% 2px; /* Expand the underline to full width */
+}
+
+body.dark hr {
+    border: 0.2px solid hotpink;
+  }
+
+* {
+    box-sizing: border-box;
+  }
+  
+/* CAREER OVERVIEW TIMELINE */
+  .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+  }
+  
+  /* The actual timeline (the vertical ruler) */
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: lightblue;
+    top: 0;
+    bottom: 40px;
+    left: 50%;
+    margin-left: -3px;
+  }
+  
+  /* Container around content */
+  .container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+  }
+  
+  /* The circles on the timeline */
+  .container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: lightblue;
+    border: 4px solid hotpink;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  /* Place the container to the left */
+  .left {
+    left: 0;
+  }
+  
+  /* Place the container to the right */
+  .right {
+    left: 50%;
+  }
+  
+  /* Add arrows to the left container (pointing right) */
+  .left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid lightblue;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent lightblue;
+  }
+  
+  /* Add arrows to the right container (pointing left) */
+  .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid lightblue;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent lightblue transparent transparent;
+  }
+  
+  /* Fix the circle for containers on the right side */
+  .right::after {
+    left: -16px;
+  }
+  
+  /* The actual content */
+  .content {
+    padding: 20px 30px;
+    background-color: lightblue;
+    position: relative;
+    border-radius: 6px;
+  }
+  
+  /* Media queries - Responsive timeline on screens less than 600px wide */
+  @media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+    .timeline::after {
+      left: 31px;
+    }
+  
+  /* Full-width containers */
+    .container {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+  
+  /* Make sure that all arrows are pointing leftwards */
+    .container::before {
+      left: 60px;
+      border: medium solid lightblue;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent lightblue transparent transparent;
+    }
+  
+  /* Make sure all circles are at the same spot */
+    .left::after, .right::after {
+      left: 15px;
+    }
+  
+  /* Make all right containers behave like the left ones */
+    .right {
+      left: 0%;
+    }
+  }
+
+  body.dark .timeline {
+    color: hotpink;
+  }
