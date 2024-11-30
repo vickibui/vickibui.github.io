@@ -1,4 +1,5 @@
 ## Hi there 👋
+This is my portfolio website! I have only coded projects for school or work so I'm excited to embark on projects for funsies.
 
 <!--
 **vickibui/vickibui** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
