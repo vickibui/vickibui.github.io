@@ -26,7 +26,8 @@
 }
 
 .hamburger.active .line:nth-child(2) {
-    opacity: 0; /* Middle line fades out */
+    opacity: 0;
+    /* Middle line fades out */
 }
 
 .hamburger.active .line:nth-child(3) {
@@ -38,7 +39,7 @@
     height: 100vh;
     position: fixed;
     background-color: #facde5;
-    top:70px;
+    top: 70px;
     left: 0;
     width: 100vw;
     z-index: 9999;
@@ -61,13 +62,18 @@
     color: #000000;
     font-weight: bold;
 
-    position: relative; /* Necessary for positioning the pseudo-element */
-    display: inline-block; /* Ensure the background size applies to the text */
-    background-image: linear-gradient(to right, #000000 0%, #000000 0%); /* Start with no underline */
+    position: relative;
+    /* Necessary for positioning the pseudo-element */
+    display: inline-block;
+    /* Ensure the background size applies to the text */
+    background-image: linear-gradient(to right, #000000 0%, #000000 0%);
+    /* Start with no underline */
     background-repeat: no-repeat;
     background-position: bottom center;
-    background-size: 0% 2px; /* Initially no width for the underline */
-    transition: background-size 0.3s ease; /* Animate the underline expansion */
+    background-size: 0% 2px;
+    /* Initially no width for the underline */
+    transition: background-size 0.3s ease;
+    /* Animate the underline expansion */
 }
 
 #menu-section.active {
@@ -75,16 +81,29 @@
 }
 
 .menu a:hover {
-    text-decoration: none; /* Remove default underline */
-    background-size: 100% 2px; /* Expand the underline to full width */
+    text-decoration: none;
+    /* Remove default underline */
+    background-size: 100% 2px;
+    /* Expand the underline to full width */
 }
 
-body.light{
+body.light {
     background-color: #facde5;
     color: #000000;
     text-align: center;
     font-family: 'Garamond', sans-serif;
 }
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    text-decoration: inherit;
+    color: inherit;
+}
+
 
 h1 {
     text-align: left;
@@ -98,16 +117,22 @@ h1 a {
 }
 
 .main-container {
-    display: flex;                /* Set children side by side */
-    align-items: flex-start;          /* Vertically align items */
-    gap: 20px;                    /* Add space between the left and right sections */
-    padding: 20px;                /* Optional: Add padding around the container */
+    display: flex;
+    /* Set children side by side */
+    align-items: flex-start;
+    /* Vertically align items */
+    gap: 20px;
+    /* Add space between the left and right sections */
+    padding: 20px;
+    /* Optional: Add padding around the container */
 }
 
 .image-text-container {
     text-align: left;
-    width: fit-content;           /* Adjust width to fit the content */
-    flex-shrink: 0;               /* Prevent shrinking of the container */
+    width: fit-content;
+    /* Adjust width to fit the content */
+    flex-shrink: 0;
+    /* Prevent shrinking of the container */
 }
 
 .left-image {
@@ -123,27 +148,31 @@ h1 a {
 
 /* Right section (ABOUT and paragraph) */
 .right-text-container {
-    flex: 1;                      /* Allow the right section to take up remaining space */
-    text-align: left;             /* Align text to the left */
+    flex: 1;
+    /* Allow the right section to take up remaining space */
+    text-align: left;
+    /* Align text to the left */
 }
 
 /* Styling for the ABOUT heading */
 #about {
-    text-align: center;           /* Center the ABOUT heading horizontally */
-    margin-bottom: 10px;          /* Add some spacing below the heading */
+    text-align: center;
+    /* Center the ABOUT heading horizontally */
+    margin-bottom: 10px;
+    /* Add some spacing below the heading */
 }
 
 footer {
-    position: relative;
-    left:0px;
+    position: static;
+    left: 0px;
     bottom: 30px;
-    height:30px;
-    width:100%;
-  }
+    height: 30px;
+    width: 100%;
+}
 
-  hr {
+hr {
     border: 0.2px solid black;
-  }
+}
 
 .social-links a {
     text-decoration: none;
@@ -166,8 +195,10 @@ footer {
 }
 
 ::selection {
-    background-color: #d099e2; /* Set the background color of the selected text */
+    background-color: #d099e2;
+    /* Set the background color of the selected text */
 }
+
 /* DARK MODE */
 
 body.dark #line {
@@ -177,7 +208,7 @@ body.dark #line {
     border-radius: 5px;
 }
 
-body.dark{
+body.dark {
     background-color: #000000;
     color: hotpink;
     text-align: center;
@@ -188,9 +219,9 @@ body.dark #mode {
     background-color: transparent;
     color: hotpink;
     border-color: hotpink;
-    outline:none;
+    outline: none;
     font-family: 'Garamond', sans-serif;
-    z-index: 99999;  
+    z-index: 99999;
 }
 
 body.dark #menu a {
@@ -204,47 +235,54 @@ body.dark #menu-section {
 }
 
 body.dark #h1 {
-        text-decoration: none;
-        color: hotpink;
+    text-decoration: none;
+    color: hotpink;
 }
 
 body.dark .menu a {
-    text-decoration: none; /* Remove default underline */
+    text-decoration: none;
+    /* Remove default underline */
     font-size: 30px;
     color: hotpink;
     font-weight: bold;
-    position: relative; /* Necessary for positioning the pseudo-element */
-    display: inline-block; /* Ensure the background size applies to the text */
-    background-image: linear-gradient(to right, hotpink 0%, hotpink 0%); /* Start with no underline */
+    position: relative;
+    /* Necessary for positioning the pseudo-element */
+    display: inline-block;
+    /* Ensure the background size applies to the text */
+    background-image: linear-gradient(to right, hotpink 0%, hotpink 0%);
+    /* Start with no underline */
     background-repeat: no-repeat;
     background-position: bottom center;
-    background-size: 0% 2px; /* Initially no width for the underline */
-    transition: background-size 0.3s ease; /* Animate the underline expansion */
+    background-size: 0% 2px;
+    /* Initially no width for the underline */
+    transition: background-size 0.3s ease;
+    /* Animate the underline expansion */
 }
 
 body.dark .menu a:hover {
-    text-decoration: none; /* Remove default underline */
-    background-size: 100% 2px; /* Expand the underline to full width */
+    text-decoration: none;
+    /* Remove default underline */
+    background-size: 100% 2px;
+    /* Expand the underline to full width */
 }
 
 body.dark hr {
     border: 0.2px solid hotpink;
-  }
+}
 
 * {
     box-sizing: border-box;
-  }
-  
+}
+
 /* CAREER OVERVIEW TIMELINE */
-  .timeline {
+.timeline {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
     padding-bottom: 100px;
-  }
-  
-  /* The actual timeline (the vertical ruler) */
-  .timeline::after {
+}
+
+.timeline::after {
     content: '';
     position: absolute;
     width: 6px;
@@ -253,18 +291,16 @@ body.dark hr {
     bottom: 40px;
     left: 50%;
     margin-left: -3px;
-  }
-  
-  /* Container around content */
-  .container {
+}
+
+.container {
     padding: 10px 40px;
     position: relative;
     background-color: inherit;
     width: 50%;
-  }
-  
-  /* The circles on the timeline */
-  .container::after {
+}
+
+.container::after {
     content: '';
     position: absolute;
     width: 25px;
@@ -275,20 +311,17 @@ body.dark hr {
     top: 15px;
     border-radius: 50%;
     z-index: 1;
-  }
-  
-  /* Place the container to the left */
-  .left {
+}
+
+.left {
     left: 0;
-  }
-  
-  /* Place the container to the right */
-  .right {
+}
+
+.right {
     left: 50%;
-  }
-  
-  /* Add arrows to the left container (pointing right) */
-  .left::before {
+}
+
+.left::before {
     content: " ";
     height: 0;
     position: absolute;
@@ -299,10 +332,9 @@ body.dark hr {
     border: medium solid lightblue;
     border-width: 10px 0 10px 10px;
     border-color: transparent transparent transparent lightblue;
-  }
-  
-  /* Add arrows to the right container (pointing left) */
-  .right::before {
+}
+
+.right::before {
     content: " ";
     height: 0;
     position: absolute;
@@ -313,54 +345,70 @@ body.dark hr {
     border: medium solid lightblue;
     border-width: 10px 10px 10px 0;
     border-color: transparent lightblue transparent transparent;
-  }
-  
-  /* Fix the circle for containers on the right side */
-  .right::after {
+}
+
+.right::after {
     left: -16px;
-  }
-  
-  /* The actual content */
-  .content {
+}
+
+.content {
     padding: 20px 30px;
     background-color: lightblue;
     position: relative;
     border-radius: 6px;
-  }
-  
-  /* Media queries - Responsive timeline on screens less than 600px wide */
-  @media screen and (max-width: 600px) {
-  /* Place the timelime to the left */
-    .timeline::after {
-      left: 31px;
-    }
-  
-  /* Full-width containers */
-    .container {
-      width: 100%;
-      padding-left: 70px;
-      padding-right: 25px;
-    }
-  
-  /* Make sure that all arrows are pointing leftwards */
-    .container::before {
-      left: 60px;
-      border: medium solid lightblue;
-      border-width: 10px 10px 10px 0;
-      border-color: transparent lightblue transparent transparent;
-    }
-  
-  /* Make sure all circles are at the same spot */
-    .left::after, .right::after {
-      left: 15px;
-    }
-  
-  /* Make all right containers behave like the left ones */
-    .right {
-      left: 0%;
-    }
-  }
+}
 
-  body.dark .timeline {
+@media screen and (max-width: 600px) {
+
+    /* Place the timelime to the left */
+    .timeline::after {
+        left: 31px;
+    }
+
+    .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .container::before {
+        left: 60px;
+        border: medium solid lightblue;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent lightblue transparent transparent;
+    }
+
+    .left::after,
+    .right::after {
+        left: 15px;
+    }
+
+    .right {
+        left: 0%;
+    }
+}
+
+body.dark .timeline {
     color: hotpink;
-  }
+}
+
+.projects li {
+    position: relative;
+    display: inline-block;
+}
+
+.projects li::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    transition: background-color 0.3s ease;
+    pointer-events: none;
+}
+
+.projects li:hover::after {
+    background-color: rgba(255, 255, 255, 0.5);
+}

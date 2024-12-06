@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 
+<!--
+ADD: federal elections contribution data:
+     ● Processed 5,900,000 rows of FEC data using Python Pandas and PostgreSQL, generating a usable dataset
+for statistical analysis
+     ● Conducted Chi-Square tests with Python SciPy, revealing strong Chi-Square statistics of over 8,000,000
+     reach, cost, quality model for marketing channels:
+     ● Employed data engineering techniques in Excel and Snowflake to integrate and preprocess datasets from 4 separate sources, allowing for the creation of 4 insightful visualizations in Jupyter Notebook
+     ● Analyzed 29 marketing channels across 3 company divisions using Python Pandas and Matplotlib, finding 13 channels with significantly high metrics and revealing a negative correlation between reach and quality
+     ● As of 6/6/24, I will soon add a picture of my vignette
+-->
+
 <html>
 
 <head>
     <title>Vicki Bui: Portfolio</title>
-    <link rel = "stylesheet" href = "style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body class = "light">
-    <h1><a href="index.html" id = "h1">VICKI BUI</a></h1>
-    <h2>DATA SCIENCE</h2>
+<body class="light">
+    <h1><a href="index.html" id="h1">VICKI BUI</a></h1>
+    <h2><a href="data.html">DATA SCIENCE</a></h2>
+    <p>Here are my best data science projects
+        from both my academic and professional career!
+        <br>
+        Click on an image of a project to learn more.
+    </p>
 
     <!-- Hamburger Button -->
     <div class="hamburger" id="hamburger">
@@ -19,31 +35,39 @@
     </div>
 
     <!-- Menu (Tabs) -->
-     <section id = "menu-section">
+    <section id="menu-section">
         <ul id="menu" class="menu">
             <li><a href="career.html">Career Overview</a></li>
             <li><a href="data.html">Data Science</a></li>
             <li><a href="env.html">Environmentalism & Sustainability</a></li>
             <li><a href="crm.html">Criminology, Law, & Society</a></li>
         </ul>
-     </section>
+    </section>
+    <ul class="projects">
+        <li><a href="data_project_collapse_prediction.html">
+                <img src="Group 9 ICS Expo Poster.jpg" width="500">
+            </a></li>
+        <li><a href="data_project_optimization.html">
+                <img src="optimization_project.jpg" width="500">
+            </a></li>
+        </ul>
 
-     <button id="mode">DARK MODE</button>
-     <footer>
-        <hr>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/vickibui">
-              <img src="linkedin_icon.png" alt="LinkedIn" width="30" height="30">
-            </a>
-            <a href="https://github.com/vickibui">
-              <img src="github_logo.png" alt="GitHub" width="30" height="30">
-            </a>
-            <a href="mailto:vickibui3@gmail.com">
-              <img src="gmail.png" alt="Email" width="30" height="30">
-            </a>
-          </div>
-    </footer>
-     <script src = "script.js"></script>
+        <button id="mode">DARK MODE</button>
+        <footer>
+            <hr>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/vickibui">
+                    <img src="linkedin_icon.png" alt="LinkedIn" width="30" height="30">
+                </a>
+                <a href="https://github.com/vickibui">
+                    <img src="github_logo.png" alt="GitHub" width="30" height="30">
+                </a>
+                <a href="mailto:vickibui3@gmail.com">
+                    <img src="gmail.png" alt="Email" width="30" height="30">
+                </a>
+            </div>
+        </footer>
+        <script src="script.js"></script>
 </body>
 
 </html>

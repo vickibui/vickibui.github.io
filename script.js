@@ -24,7 +24,7 @@ function checkModeFromStorage() {
     updateButtonText();
 }
 
-toggleButton.addEventListener("click", function() {
+toggleButton.addEventListener("click", function () {
     if (body.classList.contains("light")) {
         body.classList.remove("light");
         body.classList.add("dark");
@@ -37,7 +37,7 @@ toggleButton.addEventListener("click", function() {
     updateButtonText(); // Update button text after mode change
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     body.classList.remove("light", "dark");
     checkModeFromStorage();
 });
