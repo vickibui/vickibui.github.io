@@ -293,6 +293,10 @@ body.dark hr {
     margin-left: -3px;
 }
 
+body.dark .timeline::after {
+    background-color: #ffe6ee;
+}
+
 .container {
     padding: 10px 40px;
     position: relative;
@@ -311,6 +315,10 @@ body.dark hr {
     top: 15px;
     border-radius: 50%;
     z-index: 1;
+}
+
+body.dark .container::after {
+    background-color: #ffe6ee;
 }
 
 .left {
@@ -334,6 +342,10 @@ body.dark hr {
     border-color: transparent transparent transparent lightblue;
 }
 
+body.dark .left::before {
+    border-color: transparent transparent transparent #ffe6ee;
+}
+
 .right::before {
     content: " ";
     height: 0;
@@ -345,6 +357,10 @@ body.dark hr {
     border: medium solid lightblue;
     border-width: 10px 10px 10px 0;
     border-color: transparent lightblue transparent transparent;
+}
+
+body.dark .right::before {
+    border-color: transparent #ffe6ee transparent transparent;
 }
 
 .right::after {
@@ -392,6 +408,10 @@ body.dark .timeline {
     color: hotpink;
 }
 
+body.dark .content {
+    background-color: #ffe6ee;
+}
+
 .projects li {
     position: relative;
     display: inline-block;
@@ -412,3 +432,5 @@ body.dark .timeline {
 .projects li:hover::after {
     background-color: rgba(255, 255, 255, 0.5);
 }
+
+/* CRIMINOLOGY PDFS */
