@@ -1,3 +1,19 @@
+:root {
+    --baby-pink: #ffd6ed;
+    --light-gold: #f1e3a4;
+    --gold: #e7cd78;
+  }
+
+  @font-face {
+    font-family: "Futura";
+    src: url("fonts/futura/Futura%20Book%20font.ttf") format("truetype");
+  }
+  
+  h1 {
+    font-family: "Futura", sans-serif;
+}
+  
+
 .hamburger {
     display: flex;
     flex-direction: column;
@@ -38,7 +54,7 @@
     display: none;
     height: 100vh;
     position: fixed;
-    background-color: #facde5;
+    background-color: white;
     top: 70px;
     left: 0;
     width: 100vw;
@@ -88,10 +104,10 @@
 }
 
 body.light {
-    background-color: #facde5;
+    background-color: white;
     color: #000000;
     text-align: center;
-    font-family: 'Garamond', sans-serif;
+    font-family: 'Futura', sans-serif;
 }
 
 h1 a,
@@ -189,44 +205,45 @@ hr {
     border-radius: 25px;
     border-width: 2px;
     border-color: #000000;
-    font-family: 'Garamond', sans-serif;
+    font-family: 'Futura', sans-serif;
     cursor: pointer;
     z-index: 99999;
 }
 
 ::selection {
-    background-color: #d099e2;
-    /* Set the background color of the selected text */
+    background-color: var(--baby-pink);
 }
 
 /* DARK MODE */
-
+body.dark ::selection {
+    background-color: hotpink;
+}
 body.dark #line {
     height: 2px;
-    background-color: hotpink;
+    background-color: var(--baby-pink);
     width: 100%;
     border-radius: 5px;
 }
 
 body.dark {
     background-color: #000000;
-    color: hotpink;
+    color: var(--baby-pink);
     text-align: center;
-    font-family: 'Garamond', sans-serif;
+    font-family: 'Futura', sans-serif;
 }
 
 body.dark #mode {
     background-color: transparent;
-    color: hotpink;
-    border-color: hotpink;
+    color: var(--baby-pink);
+    border-color: var(--baby-pink);
     outline: none;
-    font-family: 'Garamond', sans-serif;
+    font-family: 'Futura', sans-serif;
     z-index: 99999;
 }
 
 body.dark #menu a {
     text-decoration: none;
-    color: hotpink;
+    color: var(--baby-pink);
     font-weight: bold;
 }
 
@@ -236,27 +253,21 @@ body.dark #menu-section {
 
 body.dark #h1 {
     text-decoration: none;
-    color: hotpink;
+    color: var(--baby-pink);
 }
 
 body.dark .menu a {
     text-decoration: none;
-    /* Remove default underline */
     font-size: 30px;
-    color: hotpink;
+    color: var(--baby-pink);
     font-weight: bold;
     position: relative;
-    /* Necessary for positioning the pseudo-element */
     display: inline-block;
-    /* Ensure the background size applies to the text */
-    background-image: linear-gradient(to right, hotpink 0%, hotpink 0%);
-    /* Start with no underline */
+    background-image: linear-gradient(to right, var(--baby-pink) 0%, var(--baby-pink) 0%);
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size: 0% 2px;
-    /* Initially no width for the underline */
     transition: background-size 0.3s ease;
-    /* Animate the underline expansion */
 }
 
 body.dark .menu a:hover {
@@ -267,7 +278,7 @@ body.dark .menu a:hover {
 }
 
 body.dark hr {
-    border: 0.2px solid hotpink;
+    border: 0.2px solid var(--baby-pink);
 }
 
 * {
@@ -286,7 +297,7 @@ body.dark hr {
     content: '';
     position: absolute;
     width: 6px;
-    background-color: lightblue;
+    background-color: var(--baby-pink);
     top: 0;
     bottom: 40px;
     left: 50%;
@@ -294,7 +305,7 @@ body.dark hr {
 }
 
 body.dark .timeline::after {
-    background-color: #ffe6ee;
+    background-color: var(--baby-pink);
 }
 
 .container {
@@ -310,15 +321,15 @@ body.dark .timeline::after {
     width: 25px;
     height: 25px;
     right: -17px;
-    background-color: lightblue;
-    border: 4px solid hotpink;
+    background-color: var(--baby-pink);
+    border: 4px solid var(--gold);
     top: 15px;
     border-radius: 50%;
     z-index: 1;
 }
 
 body.dark .container::after {
-    background-color: #ffe6ee;
+    background-color: var(--baby-pink);
 }
 
 .left {
@@ -337,13 +348,13 @@ body.dark .container::after {
     width: 0;
     z-index: 1;
     right: 30px;
-    border: medium solid lightblue;
+    border: medium solid var(--baby-pink);
     border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent lightblue;
+    border-color: transparent transparent transparent var(--baby-pink);
 }
 
 body.dark .left::before {
-    border-color: transparent transparent transparent #ffe6ee;
+    border-color: transparent transparent transparent var(--baby-pink);
 }
 
 .right::before {
@@ -354,13 +365,13 @@ body.dark .left::before {
     width: 0;
     z-index: 1;
     left: 30px;
-    border: medium solid lightblue;
+    border: medium solid var(--baby-pink);
     border-width: 10px 10px 10px 0;
-    border-color: transparent lightblue transparent transparent;
+    border-color: transparent var(--baby-pink) transparent transparent;
 }
 
 body.dark .right::before {
-    border-color: transparent #ffe6ee transparent transparent;
+    border-color: transparent var(--baby-pink) transparent transparent;
 }
 
 .right::after {
@@ -369,7 +380,7 @@ body.dark .right::before {
 
 .content {
     padding: 20px 30px;
-    background-color: lightblue;
+    background-color: var(--baby-pink);
     position: relative;
     border-radius: 6px;
 }
@@ -389,9 +400,9 @@ body.dark .right::before {
 
     .container::before {
         left: 60px;
-        border: medium solid lightblue;
+        border: medium solid var(--gold);
         border-width: 10px 10px 10px 0;
-        border-color: transparent lightblue transparent transparent;
+        border-color: transparent var(--gold) transparent transparent;
     }
 
     .left::after,
@@ -405,11 +416,11 @@ body.dark .right::before {
 }
 
 body.dark .timeline {
-    color: hotpink;
+    color: black;
 }
 
 body.dark .content {
-    background-color: #ffe6ee;
+    background-color: var(--baby-pink);
 }
 
 .projects li {
