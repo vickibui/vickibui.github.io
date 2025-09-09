@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vicki Bui</title>
+    <link rel="icon" type="image/svg+xml" href="..\Planet_Mars-cropped.svg">
+    <link rel="stylesheet" href="..\style.css">
+</head>
+
+<body class="light">
+    <div class="header-wrapper">
+        <header class="header-down">
+            <h1><a href="..\index.html" id="h1">VICKI BUI</a></h1>
+            <section id="menu-section">
+                <ul id="menu" class="menu">
+                    <li><a href="..\work.html">WORK</a></li>
+                    <li><a href="..\about.html">ABOUT</a></li>
+                    <li><a href="..\contact.html">CONTACT</a></li>
+                </ul>
+            </section>
+        </header>
+    </div>
+
+    <div class="top-panel">
+        <div class="reveal-wrapper show">
+            <h2 class="project-title">HIGH SPEED RAIL</h2>
+        </div>
+    </div>
+    <div class="projects" id="projects">
+        <h2 class="project-subtitle">researching obstacles to high
+            speed rail implementation in the united states and contrasting
+            transportation advancements in other developed countries.
+        </h2>
+        <div class="project-keywords-container">
+            <div class="project-column">
+                <h3 class="project-keywords-heading">SKILLS</h3>
+                <p class="project-keywords-text">
+                    Research & Synthesis<br>
+                </p>
+            </div>
+            <div class="project-column">
+                <h3 class="project-keywords-heading">TOOLS</h3>
+                <p class="project-keywords-text">
+                    Google Workspace<br>
+                </p>
+            </div>
+        </div>
+        <div class="project-img-desc">
+            <iframe src="..\Environmental Science\Bui_Vicki_FINAL.pdf#toolbar=0&navpanes=0&scrollbar=0&page=1"
+                class="pdf-frame" style="width: 800px;">
+            </iframe>
+        </div>
+        <div class="project-img-desc">
+            <iframe src="..\Environmental Science\High Speed Rail.pdf#toolbar=0&navpanes=0&scrollbar=0&page=1"
+                style="width: 800px; aspect-ratio: 16 / 8.8; border: none; overflow: scroll;">
+            </iframe>
+        </div>
+    </div>
+
+    <button id="mode">DARK MODE</button>
+    <script>
+        window.addEventListener("load", () => {
+            const header = document.querySelector(".header-down");
+            const panel = document.querySelector(".top-panel");
+
+            // Make the header fixed immediately
+            if (header) {
+                header.classList.add("loaded");
+                header.classList.add("fixed");
+            }
+
+            if (panel) {
+                requestAnimationFrame(() => {
+                    panel.classList.add("active");
+                    panel.classList.add("show");
+                });
+            }
+        });
+    </script>
+    <script src="..\script.js"></script>
+</body>
+
+</html>

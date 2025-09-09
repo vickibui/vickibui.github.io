@@ -3,84 +3,246 @@
 <html>
 
 <head>
-    <title>Vicki Bui: Portfolio</title>
+    <title>Vicki Bui</title>
+    <link rel="icon" type="image/svg+xml" href="Planet_Mars-cropped.svg">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="light">
-    <h1><a href="index.html" id="h1">VICKI BUI</a></h1>
+    <div id="page-overlay"></div>
+    <header class="header-index">
+        <h1><a href="index.html" id="h1">VICKI BUI</a></h1>
+        <section id="menu-section">
+            <ul id="menu" class="menu">
+                <li><a href="work.html">WORK</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </section>
+    </header>
 
-    <!-- Hamburger Button -->
-    <div class="hamburger" id="hamburger">
-        <div class="line" id="line"></div>
-        <div class="line" id="line"></div>
-        <div class="line" id="line"></div>
-    </div>
-
-    <!-- Menu (Tabs) -->
-    <section id="menu-section">
-        <ul id="menu" class="menu">
-            <li><a href="career.html">Career Overview</a></li>
-            <li><a href="data.html">Data Science</a></li>
-            <li><a href="env.html">Environmentalism & Sustainability</a></li>
-            <li><a href="crm.html">Criminology, Law, & Society</a></li>
-        </ul>
-    </section>
-
-    <div class="main-container">
-        <div class="image-text-container">
-            <img src="pink_headshot.jpg" height="325px" class="leftimage" style="border-radius: 50%;">
-            <p id="edu">
-                Bachelor of Science in Data Science
-                <br>
-                Minor in Global Sustainability
-                <br>
-                Minor in Criminology, Law, & Society
-                <br>
+    <div id="content-down">
+        <div id="index-subtitle">
+            <p id="index-subtitle-text">Currently working as a Data Visualization Developer at
+                <a href="https://www.boundaryrss.org/" class="link" style="text-decoration: underline;">Boundary
+                    Remote Subsurface Solutions</a>.
             </p>
         </div>
-        <div class="right-text-container">
-            <h2 id="about">ABOUT</h2>
-            <p style="font-size: 20px">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbspWelcome to my portfolio!
-                I designed this website using Visual Studio Code and Github Pages.
-                Here, you can have an in-depth look at some of the projects I have been most proud of
-                in both my academic and professional career.
-                My journey started in 2020 as a Criminology, Law, & Society major and Personal Shopper at Plato's Closet. 
-                From there, I switched into Data Science as my major and left CLS as my minor while also picking up the Global Sustainability minor.
-                As I professionally advanced, I gained experience as a Learning Assistant, then a Reader, for the UCI ICS Department. From there, I 
-                completed a summer internship at Fortune 500 company Pacific Life, and am now currently working as a Data Visualization Developer at
-                Boundary Remote Sensing Systems. 
-                <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbspMy educational background has allowed me to take on a specialized skillset that can be
-                transferred to a variety of fields. 
-                I enjoy using analytical and mathmatical skills from my data science background to understand and find solutions for problems associated
-                with environmental concerns or legal and governmental matters. 
-                My portfolio is still in progress, as it is being built by myself
-                without using a website builder, but my contact information is included for further questions!
-            </p>
-        </div>
+        <section id="filter-section">
+            <ul id="menu" class="menu">
+                <li class="dropdown-container">
+                    <button class="dropdown-name">Category&ensp;
+                        <span class="arrow">ᐯ</span></button>
+                    <ul class="dropdown-menu">
+                        <li><button class="dropdown">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkmark">
+                                        Criminology, Law, & Society</button></li>
+                        <li><button class="dropdown">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkmark">
+                                        Data Science</button></li>
+                        <li><button class="dropdown">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkmark">
+                                        Environmental Science/Sustainability</button></li>
+                    </ul>
+                </li>
+                <li class="dropdown-container">
+                    <button class="dropdown-name">Skills&ensp;
+                        <span class="arrow">ᐯ</span></button>
+                    <ul class="dropdown-menu">
+                        <li><button class="dropdown">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkmark">
+                                        Dashboards</button></li>
+                        <li><button class="dropdown">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkmark">
+                                        Data Visualization</button></li>
+                        <li><button class="dropdown">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkmark">
+                                        Exploratory Data Analysis</button></li>
+                        <li><button class="dropdown">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkmark">
+                                        Machine Learning</button></li>
+                        <li><button class="dropdown">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkmark">
+                                        Research</button></li>
+                        <li><button class="dropdown">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkmark">
+                                        Writing</button></li>
+                    </ul>
+                </li>
+                <li class="dropdown-container">
+                    <button class="dropdown-name">Tools&ensp;&ensp;<span class="arrow">ᐯ</span></button>
+                    <ul class="dropdown-menu">
+                        <li><button class="dropdown">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkmark">
+                                        Microsoft Excel</button></li>
+                        <li><button class="dropdown">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkmark">
+                                        Python</button></li>
+                        <li><button class="dropdown">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkmark">
+                                        SQL</button></li>
+                        <li><button class="dropdown">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkmark">
+                                        Tableau</button></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section id="gallery-section">
+            <ul class="gallery">
+                <!-- Column 1 -->
+                <li class="column">
+                    <div class="image-wrapper">
+                        <a href="work\current-project-digital-twins.html">
+                            <img src="Data Science\3d-viz.png" style="aspect-ratio: 4 / 3; object-fit: cover;">
+                        </a>
+                    </div>
+                    <div class="image-wrapper">
+                        <a href="work\2023-12-coastal-erosion-lecture.html">
+                            <img src="Environmental Science\gs_fall23.jpg">
+                        </a>
+                    </div>
+                </li>
+                <!-- Column 2 -->
+                <li class="column">
+                    <div class="image-wrapper">
+                        <a href="work\2024-05-bridge-collapse.html">
+                            <img src="Data Science\Group 9 ICS Expo Poster.jpg">
+                        </a>
+                    </div>
+                </li>
+                <!-- Column 3 -->
+                <li class="column">
+                    <div class="image-wrapper">
+                        <a href="work\2023-12-optimization.html">
+                            <img src="Data Science\optimization_project.jpg">
+                        </a>
+                    </div>
+                    <div class="image-wrapper" style="width: 100%;">
+                        <div class='tableauPlaceholder' id='viz1757327187380' style='position: relative'><noscript><a
+                                    href='#'><img alt='Dashboard 1 '
+                                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ka&#47;KaggleEmailCampaignDashboard&#47;Dashboard1&#47;1_rss.png'
+                                        style='border: none' /></a></noscript><object class='tableauViz'
+                                style='display:none;'>
+                                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                                <param name='embed_code_version' value='3' />
+                                <param name='site_root' value='' />
+                                <param name='name' value='KaggleEmailCampaignDashboard&#47;Dashboard1' />
+                                <param name='tabs' value='no' />
+                                <param name='toolbar' value='yes' />
+                                <param name='static_image'
+                                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ka&#47;KaggleEmailCampaignDashboard&#47;Dashboard1&#47;1.png' />
+                                <param name='animate_transition' value='yes' />
+                                <param name='display_static_image' value='yes' />
+                                <param name='display_spinner' value='yes' />
+                                <param name='display_overlay' value='yes' />
+                                <param name='display_count' value='yes' />
+                                <param name='language' value='en-US' />
+                            </object>
+                            <a href="work\2023-07-email-campaign-dashboard.html"
+                                style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:10;"></a>
+                        </div>
+                        <script type='text/javascript'>
+                            var divElement = document.getElementById('viz1757327187380');
+                            var vizElement = divElement.getElementsByTagName('object')[0];
+                            if (divElement.offsetWidth > 800) {
+                                vizElement.style.minWidth = '400px';
+                                vizElement.style.maxWidth = '1600px'; vizElement.style.width = '100%';
+                                vizElement.style.minHeight = '227px'; vizElement.style.maxHeight = '827px';
+                                vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                            }
+                            else if (divElement.offsetWidth > 500) {
+                                vizElement.style.minWidth = '400px';
+                                vizElement.style.maxWidth = '1600px'; vizElement.style.width = '100%';
+                                vizElement.style.minHeight = '227px'; vizElement.style.maxHeight = '827px';
+                                vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                            }
+                            else { vizElement.style.width = '100%'; vizElement.style.height = '727px'; }
+                            var scriptElement = document.createElement('script');
+                            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                            vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+                        </script>
+                    </div>
+                </li>
+            </ul>
+        </section>
     </div>
+
     <button id="mode">DARK MODE</button>
-    <footer>
-        <hr>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/vickibui">
-                <img src="svgrepo/linkedin.png" alt="LinkedIn" width="30" height="30">
-            </a>
-            <a href="https://github.com/vickibui">
-                <img src="svgrepo/github.png" alt="GitHub" width="30" height="30">
-            </a>
-            <a href="mailto:vickibui3@gmail.com">
-                <img src="svgrepo/gmail.png" alt="Email" width="30" height="30">
-            </a>
-        </div>
-    </footer>
+    <script>
+        window.addEventListener("load", () => {
+            const overlay = document.getElementById("page-overlay");
+            const content = document.getElementById("content-down");
+            const header = document.querySelector(".header-index");
+            const leftColumn = document.querySelector("li.column");
+            const dropdownToggles = document.querySelectorAll(".dropdown-name");
+            const dropdownMenus = document.querySelectorAll(".dropdown-menu");
+
+            overlay.classList.add("slide-down");
+
+            content.classList.add("loaded");
+            header.classList.add("loaded");
+
+            header.classList.add("fixed");
+            leftColumn.classList.add("fixed");
+
+            dropdownMenus.forEach(menu => {
+                menu.style.display = 'none';
+            });
+
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const menu = toggle.nextElementSibling;
+                    const arrow = toggle.querySelector('.arrow');
+
+                    // Hide all other menus
+                    dropdownMenus.forEach(m => {
+                        if (m !== menu) {
+                            m.style.display = 'none';
+                            const otherArrow = m.previousElementSibling.querySelector('.arrow');
+                            if (otherArrow) otherArrow.textContent = 'ᐯ';
+                        }
+                    });
+
+                    if (menu.style.display === 'block') {
+                        menu.style.display = 'none';
+                        arrow.textContent = 'ᐯ';
+                    } else {
+                        menu.style.display = 'block';
+                        arrow.textContent = 'ᐱ';
+                    }
+                });
+            });
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 
 </html>
-
-<!-- html + css tutorial: 
-     https://www.youtube.com/watch?v=HGTJBPNC-Gw 
--->

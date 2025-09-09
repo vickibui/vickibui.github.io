@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Vicki Bui</title>
+    <link rel="icon" type="image/svg+xml" href="Planet_Mars-cropped.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="light">
+    <div id="page-overlay"></div>
+    <div class="header-wrapper">
+        <header class="header">
+            <h1><a href="index.html" id="h1">VICKI BUI</a></h1>
+            <section id="menu-section">
+                <ul id="menu" class="menu">
+                    <li><a href="work.html">WORK</a></li>
+                    <li><a href="about.html" style="color: var(--red)"">ABOUT</a></li>
+                    <li><a href=" contact.html">CONTACT</a></li>
+                </ul>
+            </section>
+        </header>
+    </div>
+
+    <div id="content">
+        <div class="main-container">
+            <div class="text-container">
+                <div class="reveal-wrapper show">
+                    <h2 id="about-title">ABOUT</h2>
+                </div>
+                <p class="about-text">
+                    Currently, I work as a Data Visualization Developer on <a href="https://www.boundaryrss.org/"
+                        class="link" style="text-decoration: underline;">Boundary Remote Subsurface Solutions</a>.
+                    My work specializes in transforming data into 3D visualizations simulating the Earth's surface.
+                    Since starting at Boundary RSS, I have learned to synthesize academic research and
+                    national databases to expand my technological knowledge. <br>
+                    <br>
+                    In addition, I volunteer as a means to use my skills to give back to my community,
+                    particularly with organizations aiming to promote environmentally-conscious practices.
+                    <a href="https://www.the-good-loop.com/" class="link" style="text-decoration: underline;">The Good
+                        Loop</a>
+                    is a clothing swap where people can bring in unwanted clothing and in turn take home new items,
+                    diverting clothing from landfills and distributing goods to charities in need.
+                    <a href="https://www.standuptotrash.com/" class="link" style="text-decoration: underline;">Stand Up
+                        To Trash</a>
+                    organizes beach clean-ups, and I have previously volunteered with their events, even giving a
+                    lecture to educate other volunteers about effects of climate change on bodies of water.
+                    <br>
+                    <br>
+                                        I take pride in having distinct yet defined career interests.
+                    Not necessarily a jack of all trades or a master of one,
+                    but somewhere in between, with just the right amount of niches
+                    to diversify a set of loosely-connected interests to carve a unique path.
+                    My interest in Data Science lies in its professional & problem-solving applications,
+                    while my interests in Environmental Science and Legal Analysis lie in personal passion & ambition.
+                </p>
+                <h2 class="about-header">PROFESSIONAL EXPERIENCE</h2>
+                <p class="about-text">
+                    Boundary RSS, Data Visualization Developer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Sept. 2024 – Present<br>
+                    - Expanded development of an interactive 3D data visualization tool for seismic data, enhancing user
+                    engagement and enabling real-time, immersive simulations
+                    <br>
+                    - Collaborated with geoscientists to ensure visual accuracy and alignment with seismic analysis
+                    needs, increasing data accessibility and decision-making efficiency
+                    <br>
+                    Pacific Life, Data Analytics
+                    Intern&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    June 2023 – Sept. 2023<br>
+                    - Engineered a comprehensive model to evaluate the efficacy of 10 marketing channels,
+                    leveraging 13 million data points to generate 5 impactful visualizations,
+                    addressing a key challenge for the Salesforce department
+                    <br>
+                    - Utilized Tableau to craft a dynamic bar chart from a marketing campaign dataset comprising 1,000
+                    rows,
+                    enhancing data comprehension and performance
+                    <br>
+                    - Built an interactive calculator within Tableau,
+                    processing 2 million rows of data across 8 segmented subsets to project the amount of leads
+                </p>
+                <h2 class="about-header">TECHNICAL SKILLS</h2>
+                <p class="about-text">
+                    - Data Analysis | Data Visualization | Database Management | Machine Learning (Regression,
+                    Classification) | Statistical Analysis
+                    <br>
+                    - Jupyter Notebook | Microsoft Excel | R (RStudio) | SQL (MySQLServer, Snowflake, PostgreSQL) |
+                    Tableau
+                    <br>
+                    - Python: Interactive Python Notebook | Matplotlib | Numpy | Pandas | Plotly | Scikit-learn |
+                    Seaborn | Tensorflow
+                </p>
+                <h2 class="about-header">EDUCATION</h2>
+                <p class="about-text">
+                    University of California, Irvine <br>
+                    - Bachelor's of Science in Data Science <br>
+                    - Minor in Criminology, Law, & Society <br>
+                    - Minor in Global Sustainability<br>
+                </p>
+                <h2 class="about-header">CREDIT</h2>
+                <p class="about-text">I wanted my portfolio to be designed to resemble a hybrid of a fashion and
+                    technology portfolio.
+                    One I found that executes this perfectly is the portfolio of <a
+                        href="https://www.lauren-waller.com/" class="link" style="text-decoration: underline;">Lauren
+                        Waller</a>, a Product Designer,
+                    who I took inspiration from.
+                </p>
+            </div>
+            <div id="about-image">
+                <img src="darker red headshot.jpg" id="headshot">
+            </div>
+        </div>
+    </div>
+    <button id="mode">DARK MODE</button>
+    <script>
+        window.addEventListener("load", () => {
+            const overlay = document.getElementById("page-overlay");
+            const content = document.getElementById("content");
+            const header = document.querySelector("header");
+            const leftColumn = document.querySelector("li.column");
+            const headshot = document.getElementById("headshot");
+            const aboutTitle = document.getElementById("about-title");
+
+            overlay.classList.add("slide-up");
+
+            // Start content and header slide slightly after overlay
+            setTimeout(() => {
+                content.classList.add("loaded");
+                header.classList.add("loaded"); // <-- animate header too
+
+                // After transition, fix elements
+                setTimeout(() => {
+                    header.classList.add("fixed");
+                    leftColumn.classList.add("fixed");
+                }, 400); // match transition duration
+            }, 0);
+
+            content.addEventListener("transitionend", (e) => {
+                if (e.target !== content) return;
+                headshot.classList.add("show");
+                aboutTitle.classList.add("show");
+            }, { once: true });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

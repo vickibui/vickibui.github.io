@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Vicki Bui</title>
+    <link rel="icon" type="image/svg+xml" href="Planet_Mars-cropped.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="light">
+    <div id="page-overlay"></div>
+        <header class="header">
+        <h1><a href="index.html" id="h1">VICKI BUI</a>
+        </h1>
+        <section id="menu-section">
+            <ul id="menu" class="menu">
+                <li><a href="work.html" style="color: var(--red)">WORK</a></li>
+                    <li><a href=" about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </section>
+    </header>
+    <div id="content">
+        <ul class="gallery">
+            <li class="column-fixed">
+                <div class="reveal-wrapper show">
+                    <h3 id="work-header">WORK</h3>
+                </div>
+                <div class="reveal-wrapper show">
+                    <p id="work-text">
+                        What are numbers without a narrative? Or findings without data?
+                        Presented here are highlighted works
+                        involving applications of data science, environmental science, and
+                        legal analysis, which are all fields of professional or personal interest.
+                    </p>
+                </div>
+            </li>
+            <li id="column-work">
+                <a href="work\current-project-digital-twins.html" class="link">
+                    <h2 class="work-title">DIGITAL TWINS</h2>
+                    <p>- Data Visualization, Machine Learning, Simulation</p>
+                </a>
+                <a href="work\2024-05-bridge-collapse.html" class="link">
+                    <h2 class="work-title">EARTHQUAKE BRIDGE COLLAPSE</h2>
+                    <p>- Exploratory Data Analysis, Machine Learning</p>
+                </a>
+                <a href="work\2024-05-high-speed-rail.html" class="link">
+                    <h2 class="work-title">HIGH SPEED RAIL</h2>
+                    <p>- Research, Writing</p>
+                </a>
+                <a href="work\2024-03-local-community-crime-analysis.html" class="link">
+                    <h2 class="work-title">LOCAL COMMUNITY CRIME ANALYSIS</h2>
+                    <p>- Research, Case Study</p>
+                </a>
+                <a href="work\2024-02-federal-elections-contribution-data.html" class="link">
+                    <h2 class="work-title">FEDERAL ELECTION CONTRIBUTION</h2>
+                    <p>- Data Cleaning, Statistical Analysis</p>
+                </a>
+                <a href="work\2023-12-optimization.html" class="link">
+                    <h2 class="work-title">BUS ROUTE OPTIMIZER</h2>
+                    <p>- Optimization</p>
+                </a>
+                <a href="work\2023-12-coastal-erosion-lecture.html" class="link">
+                    <h2 class="work-title">COASTAL EROSION, WETLANDS, SEA LEVEL RISE</h2>
+                    <p>- Lecture</p>
+                </a>
+                <!--
+                <a href="work\2023-09-projected-leads-calculator.html" class="link">
+                    <h2 class="work-title">PROJECTED LEADS CALCULATOR</h2>
+                    <p>- Data-Driven Forecasting</p>
+                </a> -->
+                <a href="work\2023-08-rcq-model.html" class="link">
+                    <h2 class="work-title">MARKETING REACH, COST, QUALITY</h2>
+                    <p>- Exploratory Data Analysis, Data Visualization</p>
+                </a>
+                <a href="work\2023-07-email-campaign-dashboard.html" class="link">
+                    <h2 class="work-title">MARKETING EMAIL CAMPAIGN INTERACTION</h2>
+                    <p>- Data Visualization, Dashboard</p>
+                </a>
+                <a href="work\2023-07-govt-funding-racial-disparities.html" class="link">
+                    <h2 class="work-title">GOVERNMENT FUNDING + RACIAL DISPARITIES</h2>
+                    <p>- Data Visualization, Research, Writing</p>
+                </a>
+                <a href="work\2023-06-image-classification-techniques.html" class="link">
+                    <h2 class="work-title">IMAGE CLASSIFICATION TECHNIQUES</h2>
+                    <p>- Machine Learning</p>
+                </a>
+                <a href="work\2020-12-police-reform.html" class="link">
+                    <h2 class="work-title">POLICE REFORM</h2>
+                    <p>- Research, Writing</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <button id="mode">DARK MODE</button>
+    <script>
+        window.addEventListener("load", () => {
+            const overlay = document.getElementById("page-overlay");
+            const content = document.getElementById("content");
+            const header = document.querySelector("header");
+            const leftColumn = document.querySelector(".gallery li.column-fixed");
+            const rightColumn = document.getElementById("column-work");
+
+            overlay.classList.add("slide-up");
+
+            // Kick off animations
+            content.classList.add("loaded");
+            header.classList.add("loaded");
+            leftColumn.classList.add("loaded");
+
+            // When #content finishes its transform, drop the transform and then fix things
+            content.addEventListener("transitionend", (e) => {
+                if (e.target !== content) return;
+
+                // Ensure the ancestor no longer has a transform
+                content.classList.remove("page-animate"); // or whatever class adds transform
+                content.style.transform = "none";
+
+                header.classList.add("fixed");
+                leftColumn.classList.add("fixed");
+
+                rightColumn.classList.add("show");
+            }, { once: true });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Vicki Bui</title>
+    <link rel="icon" type="image/svg+xml" href="Planet_Mars-cropped.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="light">
+    <div id="page-overlay"></div>
+    <header class="header">
+        <h1><a href="index.html" id="h1">VICKI BUI</a></h1>
+        <section id="menu-section">
+            <ul id="menu" class="menu">
+                <li><a href="work.html">WORK</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html" style="color: var(--red)">CONTACT</a></li>
+            </ul>
+        </section>
+    </header>
+    <div id="content">
+        <div class="contact-info">
+            <div class="reveal-wrapper show">
+                <h2 id="contact-header">let's be in contact...</h2>
+            </div>
+            <div class="reveal-wrapper show">
+                <p id="contact-text">
+                    Email: <a href="mailto:vickibui3@gmail.com" class="link"
+                        style="text-decoration: underline;">vickibui3@gmail.com</a> <br>
+                    <a href="https://www.linkedin.com/in/vickibui" class="link"
+                        style="text-decoration: underline;">LinkedIn</a> |
+                    <a href="https://github.com/vickibui" class="link" style="text-decoration: underline;">GitHub</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <button id="mode">DARK MODE</button>
+    <script>
+        window.addEventListener("load", () => {
+            const overlay = document.getElementById("page-overlay");
+            const content = document.getElementById("content");
+            const header = document.querySelector("header");
+            const leftColumn = document.querySelector("li.column");
+
+            // Trigger overlay slide
+            overlay.classList.add("slide-up");
+
+            // Start content and header slide slightly after overlay
+            setTimeout(() => {
+                content.classList.add("loaded");
+                header.classList.add("loaded"); // <-- animate header too
+
+                // After transition, fix elements
+                setTimeout(() => {
+                    header.classList.add("fixed");
+                    leftColumn.classList.add("fixed");
+                }, 400); // match transition duration
+            }, 0);
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

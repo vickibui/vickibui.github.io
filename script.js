@@ -1,5 +1,4 @@
 // LIGHT/DARK MODE
-
 const toggleButton = document.getElementById("mode");
 const body = document.body;
 
@@ -10,12 +9,10 @@ function updateButtonText() {
         toggleButton.textContent = "LIGHT MODE";
 }
 
-// Check if a mode is saved in localStorage
 function checkModeFromStorage() {
     const savedMode = localStorage.getItem("mode");
     console.log("Saved mode:", localStorage.getItem("mode"));
     if (savedMode) {
-        // Apply the saved mode (either 'light' or 'dark')
         body.classList.add(savedMode);
     }
     else {
@@ -28,13 +25,13 @@ toggleButton.addEventListener("click", function () {
     if (body.classList.contains("light")) {
         body.classList.remove("light");
         body.classList.add("dark");
-        localStorage.setItem("mode", "dark"); // Save the mode
+        localStorage.setItem("mode", "dark");
     } else {
         body.classList.remove("dark");
         body.classList.add("light");
-        localStorage.setItem("mode", "light"); // Save the mode
+        localStorage.setItem("mode", "light");
     }
-    updateButtonText(); // Update button text after mode change
+    updateButtonText();
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -42,11 +39,4 @@ document.addEventListener("DOMContentLoaded", function () {
     checkModeFromStorage();
 });
 
-// HAMBURGER MENU
-const hamburger = document.getElementById('hamburger');
-const menuSection = document.getElementById('menu-section');
-
-hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active"); // Animate the lines
-    menuSection.classList.toggle("active"); // Show/hide the menu
-});
+// PAGE TRANSITION
