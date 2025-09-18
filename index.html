@@ -14,17 +14,24 @@
         <h1><a href="index.html" id="h1">VICKI BUI</a></h1>
         <section id="menu-section">
             <ul id="menu" class="menu">
-                <li><a href="work.html">WORK</a></li>
+                <li class="dropdown-work"><a href="work.html">WORK</a></li>
                 <li><a href="about.html">ABOUT</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
+                </li>
             </ul>
         </section>
     </header>
 
     <div id="content-down">
+        <ul class="dropdown-work-menu">
+            <li><a href="work\current-project-digital-twins.html" class="link">DIGITAL TWINS</a></li>
+            <li><a href="work\2024-05-bridge-collapse.html" class="link">EARTHQUAKE BRIDGE COLLAPSE</a></li>
+            <li><a href="work\2023-12-coastal-erosion-lecture.html" class="link">COASTAL EROSION, WETLANDS, SEA LEVEL
+                    RISE</a></li>
+        </ul>
         <div id="index-subtitle">
             <p id="index-subtitle-text">Currently working as a Data Visualization Developer at
-                <a href="https://www.boundaryrss.org/" class="link" style="text-decoration: underline;">Boundary
+                <a href="https://www.boundaryrss.org/" target="_blank" class="link"
+                    style="text-decoration: underline;">Boundary
                     Remote Subsurface Solutions</a>.
             </p>
         </div>
@@ -34,118 +41,191 @@
                     <button class="dropdown-name">Category&ensp;
                         <span class="arrow">ᐯ</span></button>
                     <ul class="dropdown-menu">
-                        <li><button class="dropdown">
-                                <label class="custom-checkbox">
-                                    <input type="checkbox">
-                                    <span class="checkmark">
-                                        Criminology, Law, & Society</button></li>
-                        <li><button class="dropdown">
-                                <label class="custom-checkbox">
-                                    <input type="checkbox">
-                                    <span class="checkmark">
-                                        Data Science</button></li>
-                        <li><button class="dropdown">
-                                <label class="custom-checkbox">
-                                    <input type="checkbox">
-                                    <span class="checkmark">
-                                        Environmental Science/Sustainability</button></li>
+                        <li class="dropdown">
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Criminology, Law, & Society
+                            </label>
+                        </li>
+                        <li class="dropdown">
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Data Science
+                            </label>
+                        </li>
+                        <li class="dropdown">
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Environmental Science/Sustainability
+                            </label>
+                        </li>
                     </ul>
                 </li>
                 <li class="dropdown-container">
                     <button class="dropdown-name">Skills&ensp;
                         <span class="arrow">ᐯ</span></button>
                     <ul class="dropdown-menu">
-                        <li><button class="dropdown">
-                                <label class="custom-checkbox">
-                                    <input type="checkbox">
-                                    <span class="checkmark">
-                                        Dashboards</button></li>
-                        <li><button class="dropdown">
-                                <label class="custom-checkbox">
-                                    <input type="checkbox">
-                                    <span class="checkmark">
-                                        Data Visualization</button></li>
-                        <li><button class="dropdown">
-                                <label class="custom-checkbox">
-                                    <input type="checkbox">
-                                    <span class="checkmark">
-                                        Exploratory Data Analysis</button></li>
-                        <li><button class="dropdown">
-                                <label class="custom-checkbox">
-                                    <input type="checkbox">
-                                    <span class="checkmark">
-                                        Machine Learning</button></li>
-                        <li><button class="dropdown">
-                                <label class="custom-checkbox">
-                                    <input type="checkbox">
-                                    <span class="checkmark">
-                                        Research</button></li>
-                        <li><button class="dropdown">
-                                <label class="custom-checkbox">
-                                    <input type="checkbox">
-                                    <span class="checkmark">
-                                        Writing</button></li>
+                        <li class="dropdown">
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Case Study
+                            </label>
+                        </li>
+                        <li class="dropdown">
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Dashboard
+                            </label>
+                        </li>
+                        <li class="dropdown">
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Data Preprocessing
+                            </label>
+                        </li>
+                        <li class="dropdown">
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Data Visualization
+                            </label>
+                        </li>
+                        <li class="dropdown">
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Exploratory Data Analysis
+                            </label>
+                        </li>
+                        <li class="dropdown">
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Lecture
+                            </label>
+                        </li>
+                        <li class="dropdown">
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Machine Learning
+                            </label>
+                        </li>
+                        <li class="dropdown">
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Optimization
+                            </label>
+                        </li>
+                        <li class="dropdown">
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Research
+                            </label>
+                        </li>
+                        <li class="dropdown">
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Simulation
+                            </label>
+                        </li>
+                        <li class="dropdown">
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Statistical Analysis
+                            </label>
+                        </li>
+                        <li class="dropdown">
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Writing
+                            </label>
+                        </li>
                     </ul>
                 </li>
                 <li class="dropdown-container">
                     <button class="dropdown-name">Tools&ensp;&ensp;<span class="arrow">ᐯ</span></button>
                     <ul class="dropdown-menu">
-                        <li><button class="dropdown">
-                                <label class="custom-checkbox">
-                                    <input type="checkbox">
-                                    <span class="checkmark">
-                                        Microsoft Excel</button></li>
-                        <li><button class="dropdown">
-                                <label class="custom-checkbox">
-                                    <input type="checkbox">
-                                    <span class="checkmark">
-                                        Python</button></li>
-                        <li><button class="dropdown">
-                                <label class="custom-checkbox">
-                                    <input type="checkbox">
-                                    <span class="checkmark">
-                                        SQL</button></li>
-                        <li><button class="dropdown">
-                                <label class="custom-checkbox">
-                                    <input type="checkbox">
-                                    <span class="checkmark">
-                                        Tableau</button></li>
+                        <li class="dropdown">
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Microsoft Excel
+                            </label>
+                        </li>
+                        <li class="dropdown">
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Python
+                            </label>
+                        </li>
+                        <li class="dropdown">
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                SQL
+                            </label>
+                        </li>
+                        <li class="dropdown">
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Tableau
+                            </label>
+                        </li>
                     </ul>
                 </li>
             </ul>
         </section>
 
         <section id="gallery-section">
-            <ul class="gallery">
-                <!-- Column 1 -->
-                <li class="column">
-                    <div class="image-wrapper">
+            <div class="gallery">
+                <div class="image-wrapper">
+                    <div class="gallery-item" data-category="Data Science" data-skill="Data Visualization, Simulation"
+                        data-tool="Python">
                         <a href="work\current-project-digital-twins.html">
                             <img src="Data Science\3d-viz.png" style="aspect-ratio: 4 / 3; object-fit: cover;">
                         </a>
                     </div>
-                    <div class="image-wrapper">
-                        <a href="work\2023-12-coastal-erosion-lecture.html">
-                            <img src="Environmental Science\gs_fall23.jpg">
-                        </a>
-                    </div>
-                </li>
-                <!-- Column 2 -->
-                <li class="column">
-                    <div class="image-wrapper">
+                </div>
+                <div class="image-wrapper">
+                    <div class="gallery-item" data-category="Data Science"
+                        data-skill="Exploratory Data Analysis, Machine Learning" data-tool="Python">
                         <a href="work\2024-05-bridge-collapse.html">
                             <img src="Data Science\Group 9 ICS Expo Poster.jpg">
                         </a>
                     </div>
-                </li>
-                <!-- Column 3 -->
-                <li class="column">
-                    <div class="image-wrapper">
+                </div>
+                <div class="image-wrapper">
+                    <div class="gallery-item" data-category="Data Science" data-skill="Optimization" data-tool="Python">
                         <a href="work\2023-12-optimization.html">
                             <img src="Data Science\optimization_project.jpg">
                         </a>
                     </div>
-                    <div class="image-wrapper" style="width: 100%;">
+                </div>
+                <div class="image-wrapper">
+                    <div class="gallery-item" data-category="Environmental Science/Sustainability" data-skill="Lecture"
+                        data-tool="">
+                        <a href="work\2023-12-coastal-erosion-lecture.html">
+                            <img src="Environmental Science\gs_fall23.jpg">
+                        </a>
+                    </div>
+                </div>
+                <div class="image-wrapper" style="width: 100%;">
+                    <div class="gallery-item" data-category="Data Science" data-skill="Data Visualization, Dashboard"
+                        data-tool="Microsoft Excel, Tableau">
                         <div class='tableauPlaceholder' id='viz1757327187380' style='position: relative'><noscript><a
                                     href='#'><img alt='Dashboard 1 '
                                         src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ka&#47;KaggleEmailCampaignDashboard&#47;Dashboard1&#47;1_rss.png'
@@ -190,43 +270,64 @@
                             vizElement.parentNode.insertBefore(scriptElement, vizElement);                
                         </script>
                     </div>
-                </li>
-            </ul>
+                </div>
+            </div>
         </section>
     </div>
 
     <button id="mode">DARK MODE</button>
+
+    <footer>
+        <div class="social-links">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+            <span class="footer-icons">
+                <a href="mailto:vickibui3@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+            </span>
+            <span class="footer-icons">
+                <a href="https://www.linkedin.com/in/vickibui" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </span>
+            <span class="footer-icons">
+                <a href="https://github.com/vickibui" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </span>
+        </div>
+    </footer>
+
     <script>
         window.addEventListener("load", () => {
             const overlay = document.getElementById("page-overlay");
             const content = document.getElementById("content-down");
             const header = document.querySelector(".header-index");
             const leftColumn = document.querySelector("li.column");
-            const dropdownToggles = document.querySelectorAll(".dropdown-name");
-            const dropdownMenus = document.querySelectorAll(".dropdown-menu");
 
             overlay.classList.add("slide-down");
-
             content.classList.add("loaded");
             header.classList.add("loaded");
-
             header.classList.add("fixed");
             leftColumn.classList.add("fixed");
+        });
 
-            dropdownMenus.forEach(menu => {
-                menu.style.display = 'none';
-            });
+        document.addEventListener("DOMContentLoaded", () => {
+            const dropdownContainers = document.querySelectorAll(".dropdown-container");
+            const checkboxes = document.querySelectorAll("#filter-section input[type='checkbox']");
+            const items = document.querySelectorAll(".gallery-item");
 
-            dropdownToggles.forEach(toggle => {
-                toggle.addEventListener('click', () => {
-                    const menu = toggle.nextElementSibling;
-                    const arrow = toggle.querySelector('.arrow');
+            dropdownContainers.forEach(container => {
+                const button = container.querySelector(".dropdown-name");
+                const menu = container.querySelector(".dropdown-menu");
+                const arrow = button.querySelector(".arrow");
 
-                    // Hide all other menus
-                    dropdownMenus.forEach(m => {
-                        if (m !== menu) {
-                            m.style.display = 'none';
-                            const otherArrow = m.previousElementSibling.querySelector('.arrow');
+                // Ensure menu is hidden
+                menu.style.display = "none";
+
+                button.addEventListener("click", () => {
+                    const isOpen = menu.style.display === "block";
+
+                    // Close all other dropdowns (optional, comment out if not wanted)
+                    dropdownContainers.forEach(otherContainer => {
+                        const otherMenu = otherContainer.querySelector(".dropdown-menu");
+                        const otherArrow = otherContainer.querySelector(".arrow");
+                        if (otherMenu !== menu) {
+                            otherMenu.style.display = "none";
                             if (otherArrow) otherArrow.textContent = 'ᐯ';
                         }
                     });
@@ -240,7 +341,51 @@
                     }
                 });
             });
+
+            checkboxes.forEach(cb => {
+                cb.addEventListener("change", () => {
+                    // Collect selected filters
+                    const selectedCategories = [];
+                    const selectedSkills = [];
+                    const selectedTools = [];
+
+                    document.querySelectorAll("#filter-section input[type='checkbox']:checked").forEach(checked => {
+                        const label = checked.closest("label").innerText.trim();
+
+                        // match against known groups
+                        if (["Criminology, Law, & Society", "Data Science", "Environmental Science/Sustainability"].includes(label)) {
+                            selectedCategories.push(label);
+                        } else if (["Microsoft Excel", "Python", "SQL", "Tableau"].includes(label)) {
+                            selectedTools.push(label);
+                        } else {
+                            selectedSkills.push(label);
+                        }
+                    });
+
+                    // Filter items
+                    items.forEach(item => {
+                        const itemCategories = item.dataset.category?.split(",").map(v => v.trim()) || [];
+                        const itemSkills = item.dataset.skill?.split(",").map(v => v.trim()) || [];
+                        const itemTools = item.dataset.tool?.split(",").map(v => v.trim()) || [];
+
+                        let categoryMatch = selectedCategories.length === 0 || selectedCategories.some(cat => itemCategories.includes(cat));
+                        let skillMatch = selectedSkills.length === 0 || selectedSkills.some(skill => itemSkills.includes(skill));
+                        let toolMatch = selectedTools.length === 0 || selectedTools.some(tool => itemTools.includes(tool));
+
+                        // Item should be visible if it matches all active filter groups
+                        if (categoryMatch && skillMatch && toolMatch) {
+                            item.classList.remove("hidden");
+                        }
+                        else {
+                            item.classList.add("hidden");
+                        }
+                    });
+                });
+            });
         });
+    </script>
+    <link rel="stylesheet" href="https://unpkg.com/flexmasonry/dist/flexmasonry.css">
+    <script src="https://unpkg.com/flexmasonry/dist/flexmasonry.js">
     </script>
     <script src="script.js"></script>
 </body>

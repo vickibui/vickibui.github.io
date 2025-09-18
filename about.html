@@ -17,7 +17,6 @@
                 <ul id="menu" class="menu">
                     <li><a href="work.html">WORK</a></li>
                     <li><a href="about.html" style="color: var(--red)"">ABOUT</a></li>
-                    <li><a href=" contact.html">CONTACT</a></li>
                 </ul>
             </section>
         </header>
@@ -38,11 +37,11 @@
                     <br>
                     In addition, I volunteer as a means to use my skills to give back to my community,
                     particularly with organizations aiming to promote environmentally-conscious practices.
-                    <a href="https://www.the-good-loop.com/" class="link" style="text-decoration: underline;">The Good
+                    <a href="https://www.the-good-loop.com/" target="_blank" class="link" style="text-decoration: underline;">The Good
                         Loop</a>
                     is a clothing swap where people can bring in unwanted clothing and in turn take home new items,
                     diverting clothing from landfills and distributing goods to charities in need.
-                    <a href="https://www.standuptotrash.com/" class="link" style="text-decoration: underline;">Stand Up
+                    <a href="https://www.standuptotrash.com/" target="_blank" class="link" style="text-decoration: underline;">Stand Up
                         To Trash</a>
                     organizes beach clean-ups, and I have previously volunteered with their events, even giving a
                     lecture to educate other volunteers about effects of climate change on bodies of water.
@@ -103,7 +102,7 @@
                 <p class="about-text">I wanted my portfolio to be designed to resemble a hybrid of a fashion and
                     technology portfolio.
                     One I found that executes this perfectly is the portfolio of <a
-                        href="https://www.lauren-waller.com/" class="link" style="text-decoration: underline;">Lauren
+                        href="https://www.lauren-waller.com/" target="_blank" class="link" style="text-decoration: underline;">Lauren
                         Waller</a>, a Product Designer,
                     who I took inspiration from.
                 </p>
@@ -113,12 +112,30 @@
             </div>
         </div>
     </div>
+    
     <button id="mode">DARK MODE</button>
+
+    <footer class="footer">
+        <div class="social-links">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+            <span class="footer-icons">
+                <a href="mailto:vickibui3@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+            </span>
+            <span class="footer-icons">
+                <a href="https://www.linkedin.com/in/vickibui" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </span>
+            <span class="footer-icons">
+                <a href="https://github.com/vickibui" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </span>
+        </div>
+    </footer>
+    
     <script>
         window.addEventListener("load", () => {
             const overlay = document.getElementById("page-overlay");
             const content = document.getElementById("content");
             const header = document.querySelector("header");
+            const footer = document.querySelector("footer");
             const leftColumn = document.querySelector("li.column");
             const headshot = document.getElementById("headshot");
             const aboutTitle = document.getElementById("about-title");
@@ -128,7 +145,8 @@
             // Start content and header slide slightly after overlay
             setTimeout(() => {
                 content.classList.add("loaded");
-                header.classList.add("loaded"); // <-- animate header too
+                header.classList.add("loaded");
+                footer.classList.add("loaded");
 
                 // After transition, fix elements
                 setTimeout(() => {

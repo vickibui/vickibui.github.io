@@ -15,7 +15,6 @@
                 <ul id="menu" class="menu">
                     <li><a href="..\work.html">WORK</a></li>
                     <li><a href="..\about.html">ABOUT</a></li>
-                    <li><a href="..\contact.html">CONTACT</a></li>
                 </ul>
             </section>
         </header>
@@ -57,23 +56,39 @@
     </div>
 
     <button id="mode">DARK MODE</button>
+
+    <footer>
+        <div class="social-links">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+            <span class="footer-icons">
+                <a href="mailto:vickibui3@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+            </span>
+            <span class="footer-icons">
+                <a href="https://www.linkedin.com/in/vickibui" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </span>
+            <span class="footer-icons">
+                <a href="https://github.com/vickibui" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </span>
+        </div>
+    </footer>
+
     <script>
         window.addEventListener("load", () => {
             const header = document.querySelector(".header-down");
             const panel = document.querySelector(".top-panel");
 
-            // Make the header fixed immediately
             if (header) {
                 header.classList.add("loaded");
                 header.classList.add("fixed");
             }
-
+            
             if (panel) {
                 requestAnimationFrame(() => {
                     panel.classList.add("active");
                     panel.classList.add("show");
                 });
             }
+
         });
     </script>
     <script src="..\script.js"></script>

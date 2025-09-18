@@ -10,17 +10,17 @@
 
 <body class="light">
     <div id="page-overlay"></div>
-        <header class="header">
+    <header class="header">
         <h1><a href="index.html" id="h1">VICKI BUI</a>
         </h1>
         <section id="menu-section">
             <ul id="menu" class="menu">
                 <li><a href="work.html" style="color: var(--red)">WORK</a></li>
-                    <li><a href=" about.html">ABOUT</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href=" about.html">ABOUT</a></li>
             </ul>
         </section>
     </header>
+
     <div id="content">
         <ul class="gallery">
             <li class="column-fixed">
@@ -39,7 +39,7 @@
             <li id="column-work">
                 <a href="work\current-project-digital-twins.html" class="link">
                     <h2 class="work-title">DIGITAL TWINS</h2>
-                    <p>- Data Visualization, Machine Learning, Simulation</p>
+                    <p>- Data Visualization, Simulation</p>
                 </a>
                 <a href="work\2024-05-bridge-collapse.html" class="link">
                     <h2 class="work-title">EARTHQUAKE BRIDGE COLLAPSE</h2>
@@ -55,7 +55,7 @@
                 </a>
                 <a href="work\2024-02-federal-elections-contribution-data.html" class="link">
                     <h2 class="work-title">FEDERAL ELECTION CONTRIBUTION</h2>
-                    <p>- Data Cleaning, Statistical Analysis</p>
+                    <p>- Data Preprocessing, Statistical Analysis</p>
                 </a>
                 <a href="work\2023-12-optimization.html" class="link">
                     <h2 class="work-title">BUS ROUTE OPTIMIZER</h2>
@@ -93,12 +93,30 @@
             </li>
         </ul>
     </div>
+
+    <footer class="footer" style="position: fixed; background-color: inherit;">
+        <div class="social-links">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+            <span class="footer-icons">
+                <a href="mailto:vickibui3@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+            </span>
+            <span class="footer-icons">
+                <a href="https://www.linkedin.com/in/vickibui" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </span>
+            <span class="footer-icons">
+                <a href="https://github.com/vickibui" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </span>
+        </div>
+    </footer>
+
     <button id="mode">DARK MODE</button>
+    
     <script>
         window.addEventListener("load", () => {
             const overlay = document.getElementById("page-overlay");
             const content = document.getElementById("content");
             const header = document.querySelector("header");
+            const footer = document.querySelector("footer");
             const leftColumn = document.querySelector(".gallery li.column-fixed");
             const rightColumn = document.getElementById("column-work");
 
@@ -107,6 +125,7 @@
             // Kick off animations
             content.classList.add("loaded");
             header.classList.add("loaded");
+            footer.classList.add("loaded");
             leftColumn.classList.add("loaded");
 
             // When #content finishes its transform, drop the transform and then fix things
