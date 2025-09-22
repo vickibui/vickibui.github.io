@@ -1,3 +1,12 @@
+// REFRESH SCROLL TO TOP
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+} else {
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    }
+}
+
 // LIGHT/DARK MODE
 const toggleButton = document.getElementById("mode");
 const body = document.body;
