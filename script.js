@@ -20,12 +20,11 @@ function updateButtonText() {
 
 function checkModeFromStorage() {
     const savedMode = localStorage.getItem("mode");
-    console.log("Saved mode:", localStorage.getItem("mode"));
-    if (savedMode) {
-        body.classList.add(savedMode);
-    }
-    else {
-        body.classList.add("light");
+    console.log("Saved mode:", savedMode);
+    if (savedMode === "dark") {
+        body.classList.add("dark");
+    } else {
+        body.classList.add("light"); // default
     }
     updateButtonText();
 }
@@ -43,9 +42,4 @@ toggleButton.addEventListener("click", function () {
     updateButtonText();
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    body.classList.remove("light", "dark");
-    checkModeFromStorage();
-});
-
-// PAGE TRANSITION
+checkModeFromStorage();

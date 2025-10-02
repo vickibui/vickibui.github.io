@@ -9,7 +9,6 @@
 </head>
 
 <body class="light">
-    <div id="page-overlay"></div>
     <header class="header-index">
         <h1><a href="index.html" id="h1">VICKI BUI</a></h1>
         <section id="menu-section">
@@ -29,11 +28,11 @@
                     RISE</a></li>
         </ul>
         <div id="index-subtitle">
-            <p id="index-subtitle-text">Currently working as a Data Visualization Developer at
+            <h2 id="index-subtitle-text" style="font-size: 20px;">Currently working as a Data Visualization Developer at
                 <a href="https://www.boundaryrss.org/" target="_blank" class="link"
                     style="text-decoration: underline;">Boundary
                     Remote Subsurface Solutions</a>.
-            </p>
+                </p>
         </div>
         <section id="filter-section">
             <ul id="menu" class="menu">
@@ -186,10 +185,11 @@
         <section id="gallery-section">
             <div class="gallery">
                 <div class="image-wrapper">
-                    <div class="gallery-item" data-category="Data Science, Environmental Science/Sustainability" data-skill="Data Visualization, Simulation"
-                        data-tool="Python">
+                    <div class="gallery-item" data-category="Data Science, Environmental Science/Sustainability"
+                        data-skill="Data Visualization, Simulation" data-tool="Python">
                         <a href="work\current-project-digital-twins.html">
-                            <img src="Data Science\3d-viz.png" style="border: 1px solid lightgrey; aspect-ratio: 4 / 3; object-fit: cover;">
+                            <img src="Data Science\3d-viz.png"
+                                style="border: 1px solid lightgrey; aspect-ratio: 4 / 3; object-fit: cover;">
                         </a>
                     </div>
                 </div>
@@ -202,7 +202,8 @@
                     </div>
                 </div>
                 <div class="image-wrapper">
-                    <div class="gallery-item" data-category="Data Science, Environmental Science/Sustainability" data-skill="Machine Learning" data-tool="Python">
+                    <div class="gallery-item" data-category="Data Science, Environmental Science/Sustainability"
+                        data-skill="Machine Learning" data-tool="Python">
                         <a href="work\2023-12-optimization.html">
                             <img src="Data Science\Bus Route Optimization.png" style="border: 1px solid lightgrey">
                         </a>
@@ -220,7 +221,8 @@
                     <div class="gallery-item" data-category="Data Science" data-skill="Data Visualization, Dashboard"
                         data-tool="Microsoft Excel, Tableau">
                         <a href="work\2023-07-email-campaign-dashboard.html">
-                            <img src="Data Science\Dashboard 1 Marketing Analytics.png" style="border: 1px solid lightgrey; ">
+                            <img src="Data Science\Dashboard 1 Marketing Analytics.png"
+                                style="border: 1px solid lightgrey; ">
                         </a>
                     </div>
                 </div>
@@ -228,7 +230,7 @@
         </section>
     </div>
 
-    <button id="mode">DARK MODE</button>
+    <!-- <button id="mode">DARK MODE</button> -->
 
     <footer>
         <div class="social-links">
@@ -246,19 +248,6 @@
     </footer>
 
     <script>
-        window.addEventListener("load", () => {
-            const overlay = document.getElementById("page-overlay");
-            const content = document.getElementById("content-down");
-            const header = document.querySelector(".header-index");
-            const leftColumn = document.querySelector("li.column");
-
-            overlay.classList.add("slide-down");
-            content.classList.add("loaded");
-            header.classList.add("loaded");
-            header.classList.add("fixed");
-            leftColumn.classList.add("fixed");
-        });
-
         document.addEventListener("DOMContentLoaded", () => {
             const dropdownContainers = document.querySelectorAll(".dropdown-container");
             const checkboxes = document.querySelectorAll("#filter-section input[type='checkbox']");

@@ -9,9 +9,7 @@
 </head>
 
 <body class="light">
-    <div id="page-overlay"></div>
-    <div class="header-wrapper">
-        <header class="header">
+        <header>
             <h1><a href="index.html" id="h1">VICKI BUI</a></h1>
             <section id="menu-section">
                 <ul id="menu" class="menu">
@@ -20,7 +18,6 @@
                 </ul>
             </section>
         </header>
-    </div>
 
     <div id="content">
         <div class="main-container">
@@ -113,7 +110,7 @@
         </div>
     </div>
     
-    <button id="mode">DARK MODE</button>
+    <!-- <button id="mode">DARK MODE</button> -->
 
     <footer class="footer">
         <div class="social-links">
@@ -132,15 +129,11 @@
     
     <script>
         window.addEventListener("load", () => {
-            const overlay = document.getElementById("page-overlay");
             const content = document.getElementById("content");
             const header = document.querySelector("header");
             const footer = document.querySelector("footer");
-            const leftColumn = document.querySelector("li.column");
             const headshot = document.getElementById("headshot");
             const aboutTitle = document.getElementById("about-title");
-
-            overlay.classList.add("slide-up");
 
             // Start content and header slide slightly after overlay
             setTimeout(() => {
@@ -151,7 +144,6 @@
                 // After transition, fix elements
                 setTimeout(() => {
                     header.classList.add("fixed");
-                    leftColumn.classList.add("fixed");
                 }, 400); // match transition duration
             }, 0);
 

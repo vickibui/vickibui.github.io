@@ -8,23 +8,17 @@
 </head>
 
 <body class="light">
-    <div class="header-wrapper">
-        <header class="header-down">
-            <h1><a href="..\index.html" id="h1">VICKI BUI</a></h1>
-            <section id="menu-section">
-                <ul id="menu" class="menu">
-                    <li><a href="..\work.html">WORK</a></li>
-                    <li><a href="..\about.html">ABOUT</a></li>
-                </ul>
-            </section>
-        </header>
-    </div>
+    <header>
+        <h1><a href="..\index.html" id="h1">VICKI BUI</a></h1>
+        <section id="menu-section">
+            <ul id="menu" class="menu">
+                <li><a href="..\work.html">WORK</a></li>
+                <li><a href="..\about.html">ABOUT</a></li>
+            </ul>
+        </section>
+    </header>
 
-    <div class="top-panel">
-        <div class="reveal-wrapper show">
-            <h2 class="project-title">BUS ROUTE OPTIMIZATION</h2>
-        </div>
-    </div>
+    <h2 class="project-title">BUS ROUTE OPTIMIZATION</h2>
     <div class="projects" id="projects">
         <h2 class="project-subtitle">optimization techniques on a real-life scenario.
         </h2>
@@ -47,42 +41,23 @@
         </div>
     </div>
 
-    <button id="mode">DARK MODE</button>
+    <!-- <button id="mode">DARK MODE</button> -->
 
     <footer>
-            <div class="social-links">
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-                <span class="footer-icons">
-                    <a href="mailto:vickibui3@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
-                </span>
-                <span class="footer-icons">
-                    <a href="https://www.linkedin.com/in/vickibui" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                </span>
-                <span class="footer-icons">
-                    <a href="https://github.com/vickibui" target="_blank"><i class="fa-brands fa-github"></i></a>
-                </span>
-            </div>
-        </footer>
-        
-    <script>
-        window.addEventListener("load", () => {
-            const header = document.querySelector(".header-down");
-            const panel = document.querySelector(".top-panel");
+        <div class="social-links">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+            <span class="footer-icons">
+                <a href="mailto:vickibui3@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+            </span>
+            <span class="footer-icons">
+                <a href="https://www.linkedin.com/in/vickibui" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </span>
+            <span class="footer-icons">
+                <a href="https://github.com/vickibui" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </span>
+        </div>
+    </footer>
 
-            // Make the header fixed immediately
-            if (header) {
-                header.classList.add("loaded");
-                header.classList.add("fixed");
-            }
-
-            if (panel) {
-                requestAnimationFrame(() => {
-                    panel.classList.add("active");
-                    panel.classList.add("show");
-                });
-            }
-        });
-    </script>
     <script src="..\script.js"></script>
 </body>
 
