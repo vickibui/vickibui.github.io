@@ -20,19 +20,19 @@
         </section>
     </header>
 
-    <div id="content-down">
+    <div>
         <ul class="dropdown-work-menu">
             <li><a href="work\current-project-digital-twins.html" class="link">DIGITAL TWINS</a></li>
             <li><a href="work\2024-05-bridge-collapse.html" class="link">EARTHQUAKE BRIDGE COLLAPSE</a></li>
             <li><a href="work\2023-12-coastal-erosion-lecture.html" class="link">COASTAL EROSION, WETLANDS, SEA LEVEL
                     RISE</a></li>
         </ul>
-        <div id="index-subtitle">
-            <h2 id="index-subtitle-text" style="font-size: 20px;">Currently working as a Data Visualization Developer at
+        <div class="index-subtitle" style="margin-top: 95px; border-bottom: 1px solid lightgrey;">
+            <h2 class="index-subtitle-text">Data Visualization Developer @
                 <a href="https://www.boundaryrss.org/" target="_blank" class="link"
                     style="text-decoration: underline;">Boundary
-                    Remote Subsurface Solutions</a>.
-                </p>
+                    Remote Subsurface Solutions</a>
+            </h2>
         </div>
         <section id="filter-section">
             <ul id="menu" class="menu">
@@ -182,55 +182,170 @@
             </ul>
         </section>
 
+        <div class="index-subtitle" id="projects"
+            style="border-top: 1px solid lightgrey; border-bottom: 1px solid lightgrey; margin: 35px 5em 0">
+            <h2 class="index-subtitle-text">PROJECTS
+            </h2>
+        </div>
+
         <section id="gallery-section">
             <div class="gallery">
-                <div class="image-wrapper">
-                    <div class="gallery-item" data-category="Data Science, Environmental Science/Sustainability"
-                        data-skill="Data Visualization, Simulation" data-tool="Python">
-                        <a href="work\current-project-digital-twins.html">
+
+                <div class="gallery-item" id="projects-gallery"
+                    data-category="Data Science; Environmental Science/Sustainability"
+                    data-skill="Data Visualization; Simulation" data-tool="Python">
+                    <a href="work\current-project-digital-twins.html" class="link">
+                        <div class="image-wrapper">
                             <img src="Data Science\3d-viz.png"
                                 style="border: 1px solid lightgrey; aspect-ratio: 4 / 3; object-fit: cover;">
-                        </a>
-                    </div>
+                        </div>
+                        <h2 class="item-text">DIGITAL TWINS</h2>
+                        <p class="item-text-desc">
+                            Researching obstacles to high speed rail
+                            implementation in the United States and contrasting
+                            transportation advancements in other developed countries.
+                        </p>
+                    </a>
                 </div>
-                <div class="image-wrapper">
-                    <div class="gallery-item" data-category="Data Science"
-                        data-skill="Exploratory Data Analysis, Machine Learning" data-tool="Python">
-                        <a href="work\2024-05-bridge-collapse.html">
+
+                <div class="gallery-item" id="projects-gallery" data-category="Data Science"
+                    data-skill="Exploratory Data Analysis; Machine Learning" data-tool="Python">
+                    <a href="work\2024-05-bridge-collapse.html" class="link">
+                        <div class="image-wrapper">
                             <img src="Data Science\Group 9 ICS Expo Poster.jpg">
-                        </a>
-                    </div>
+                        </div>
+                        <h2 class="item-text">EARTHQUAKE BRIDGE COLLAPSE</h2>
+                        <p class="item-text-desc">
+                            Synthesizing datasets of different earth layers
+                            to create a 3d simulation of the earth's subsurface.
+                        </p>
+                    </a>
                 </div>
-                <div class="image-wrapper">
-                    <div class="gallery-item" data-category="Data Science, Environmental Science/Sustainability"
-                        data-skill="Machine Learning" data-tool="Python">
-                        <a href="work\2023-12-optimization.html">
+
+                <div class="gallery-item" id="projects-gallery"
+                    data-category="Data Science; Environmental Science/Sustainability" data-skill="Machine Learning"
+                    data-tool="Python">
+                    <a href="work\2023-12-optimization.html" class="link">
+                        <div class="image-wrapper">
                             <img src="Data Science\Bus Route Optimization.png" style="border: 1px solid lightgrey">
-                        </a>
-                    </div>
-                </div>
-                <div class="image-wrapper">
-                    <div class="gallery-item" data-category="Environmental Science/Sustainability" data-skill="Lecture"
-                        data-tool="">
-                        <a href="work\2023-12-coastal-erosion-lecture.html">
-                            <img src="Environmental Science\Coastal Erosion, Wetlands, Sea Level Rise.png">
-                        </a>
-                    </div>
-                </div>
-                <div class="image-wrapper" style="width: 100%;">
-                    <div class="gallery-item" data-category="Data Science" data-skill="Data Visualization, Dashboard"
-                        data-tool="Microsoft Excel, Tableau">
-                        <a href="work\2023-07-email-campaign-dashboard.html">
-                            <img src="Data Science\Dashboard 1 Marketing Analytics.png"
-                                style="border: 1px solid lightgrey; ">
-                        </a>
-                    </div>
+                        </div>
+                        <h2 class="item-text">BUS ROUTE OPTIMIZATION</h2>
+                        <p class="item-text-desc">
+                            Optimization techniques on a real-life scenario.
+                        </p>
+                    </a>
                 </div>
             </div>
-        </section>
+
+            <div class="gallery-item" id="projects-gallery" data-category="Environmental Science/Sustainability"
+                data-skill="Lecture" data-tool="">
+                <a href="work\2023-12-coastal-erosion-lecture.html" class="link">
+                    <div class="image-wrapper">
+                        <img src="Environmental Science\Coastal Erosion, Wetlands, Sea Level Rise.png">
+                    </div>
+                    <h2 class="item-text">COASTAL EROSION, WETLANDS, SEA LEVEL RISE</h2>
+                    <p class="item-text-desc">
+                        Lecture on various topics relating to climate change
+                        and water following a beach-clean up with
+                        Stand Up To Trash.
+                    </p>
+                </a>
+            </div>
+
+            <div class="gallery-item" id="projects-gallery" data-category="Data Science"
+                data-skill="Data Visualization; Dashboard" data-tool="Microsoft Excel; Tableau">
+                <a href="work\2023-07-email-campaign-dashboard.html" class="link">
+                    <div class="image-wrapper">
+                        <img src="Data Science\Dashboard 1 Marketing Analytics.png"
+                            style="border: 1px solid lightgrey; ">
+                    </div>
+                    <h2 class="item-text">MARKETING EMAIL CAMPAIGN INTERACTION</h2>
+                    <p class="item-text-desc">
+                        Dashboard visualizing interactions from a marketing email campaign.
+                    </p>
+                </a>
+            </div>
+
+    </div>
+    </section>
+
+    <div class="index-subtitle" id="papers"
+        style="border-top: 1px solid lightgrey; border-bottom: 1px solid lightgrey; margin: 10px 5em 0">
+        <h2 class="index-subtitle-text">PAPERS
+        </h2>
     </div>
 
-    <!-- <button id="mode">DARK MODE</button> -->
+    <section id="scroll-section">
+        <div class="gallery-item" id="papers-gallery" data-category="Environmental Science/Sustainability" data-skill=""
+            data-tool="">
+            <a href="work\2024-05-high-speed-rail.html" class="link">
+                <div class="image-wrapper">
+                    <iframe src="..\Environmental Science\Bui_Vicki_FINAL.pdf#toolbar=0&navpanes=0&page=1"
+                        class="pdf-frame" style="width: 21dvw;">
+                    </iframe>
+                </div>
+                <h2 class="item-text">HIGH SPEED RAIL</h2>
+                <p class="item-text-desc">
+                    Researching obstacles to high speed rail
+                    implementation in the United States and contrasting
+                    transportation advancements in other developed countries.
+                </p>
+            </a>
+        </div>
+
+        <div class="gallery-item" id="papers-gallery" data-category="Criminology, Law, & Society"
+            data-skill="Case Study" data-tool="">
+            <a href="work\2023-07-govt-funding-racial-disparities.html" class="link">
+                <div class="image-wrapper">
+                    <iframe
+                        src="..\CLS\Goverment Funding and Racial Disparities.pdf#toolbar=0&navpanes=0&scrollbar=0&page=1"
+                        class="pdf-frame" style="width: 21dvw;">
+                    </iframe>
+                </div>
+                <h2 class="item-text">GOVERNMENT FUNDING & RACIAL DISPARITIES</h2>
+                <p class="item-text-desc">
+                    Legal analysis synthesizing historical context,
+                    research on government policy, and data visualization.
+                </p>
+            </a>
+        </div>
+
+        <div class="gallery-item" id="papers-gallery" data-category="Criminology, Law, & Society" data-skill=""
+            data-tool="">
+            <a href="work\2020-12-police-reform.html" class="link">
+                <div class="image-wrapper">
+                    <iframe src="..\CLS\AP.pdf#toolbar=0&navpanes=0&page=1" class="pdf-frame" srolling="none"
+                        style="width: 21dvw;">
+                    </iframe>
+                </div>
+                <h2 class="item-text">POLICE REFORM: ADVOCACY</h2>
+                <p class="item-text-desc">
+                    Advocacy on solutions for reform based on
+                    ethical concerns of technology usage by law enforcement.
+                </p>
+            </a>
+        </div>
+
+
+        <div class="gallery-item" id="papers-gallery" data-category="Criminology, Law, & Society" data-skill=""
+            data-tool="">
+            <a href="work\2020-12-police-reform.html" class="link">
+                <div class="image-wrapper">
+                    <iframe src="..\CLS\11.10 CP Final.pdf#toolbar=0&page=1" class="pdf-frame" style="width: 21dvw;">
+                    </iframe>
+                </div>
+                <h2 class="item-text">POLICE REFORM: CONTEXT</h2>
+                <p class="item-text-desc">
+                    Advocacy on solutions for reform based on
+                    ethical concerns of technology usage by law enforcement.
+                </p>
+            </a>
+        </div>
+
+    </section>
+    </div>
+
+    <button id="mode">DARK MODE</button>
 
     <footer>
         <div class="social-links">
@@ -252,6 +367,14 @@
             const dropdownContainers = document.querySelectorAll(".dropdown-container");
             const checkboxes = document.querySelectorAll("#filter-section input[type='checkbox']");
             const items = document.querySelectorAll(".gallery-item");
+            const projectsGallery = Array.from(document.querySelectorAll("#projects-gallery"));
+            const papersGallery = Array.from(document.querySelectorAll("#papers-gallery"));
+            const scrollSection = document.querySelectorAll(".scroll-section");
+            const projects = document.querySelectorAll("#projects");
+            const papers = document.querySelectorAll("#papers");
+
+            totalProjects = projectsGallery.length;
+            totalPapers = papersGallery.length;
 
             dropdownContainers.forEach(container => {
                 const button = container.querySelector(".dropdown-name");
@@ -305,10 +428,15 @@
                     });
 
                     // Filter items
+                    visibleProjects = totalProjects;
+                    visiblePapers = totalPapers;
+                    hiddenProjects = 0;
+                    hiddenPapers = 0;
+
                     items.forEach(item => {
-                        const itemCategories = item.dataset.category?.split(",").map(v => v.trim()) || [];
-                        const itemSkills = item.dataset.skill?.split(",").map(v => v.trim()) || [];
-                        const itemTools = item.dataset.tool?.split(",").map(v => v.trim()) || [];
+                        const itemCategories = item.dataset.category?.split(";").map(v => v.trim()) || [];
+                        const itemSkills = item.dataset.skill?.split(";").map(v => v.trim()) || [];
+                        const itemTools = item.dataset.tool?.split(";").map(v => v.trim()) || [];
 
                         let categoryMatch = selectedCategories.length === 0 || selectedCategories.some(cat => itemCategories.includes(cat));
                         let skillMatch = selectedSkills.length === 0 || selectedSkills.some(skill => itemSkills.includes(skill));
@@ -317,11 +445,41 @@
                         // Item should be visible if it matches all active filter groups
                         if (categoryMatch && skillMatch && toolMatch) {
                             item.classList.remove("hidden");
+                            if (projectsGallery.includes(item)) {
+                            }
+                            else if (papersGallery.includes(item)) {
+                            }
                         }
                         else {
                             item.classList.add("hidden");
+                            if (projectsGallery.includes(item)) {
+                                ++hiddenProjects;
+                            }
+                            else if (papersGallery.includes(item)) {
+                                ++hiddenPapers;
+                            }
                         }
                     });
+                    visibleProjects -= hiddenProjects;
+                    visiblePapers -= hiddenPapers;
+
+                    console.log("visible projects: ", visibleProjects);
+                    console.log("visible papers: ", visiblePapers);
+                    
+                    // Text visibility
+                    if (visibleProjects === 0) {
+                        projects.forEach(e => e.style.display = "none");
+                    }
+                    else if (visibleProjects != 0) {
+                        projects.forEach(e => e.style.display = "block");
+                    }
+
+                    if (visiblePapers === 0) {
+                        papers.forEach(e => e.style.display = "none");
+                    }
+                    else if (visiblePapers != 0) {
+                        papers.forEach(e => e.style.display = "block");
+                    }
                 });
             });
         });

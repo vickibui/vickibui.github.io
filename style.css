@@ -85,7 +85,7 @@ header {
     margin: 0;
     width: 100%;
     height: 95px;
-    z-index: 1000;
+    z-index: 1001;
     background-color: var(--beige-grey);
     border-bottom: 1px solid lightgrey;
     position: fixed;
@@ -168,7 +168,6 @@ h1 a {
 /* HEADER END */
 
 h1 a,
-h2 a,
 h3 a,
 h4 a,
 h5 a,
@@ -405,17 +404,16 @@ body.dark .link {
 }
 
 /* HOME PAGE START */
-#index-subtitle {
-    margin-top: 95px;
+.index-subtitle {
     padding-top: 5px;
-    border-bottom: 1px solid lightgrey;
     margin-bottom: 0;
     padding-bottom: 0;
 }
 
-#index-subtitle-text {
+.index-subtitle-text {
     text-align: center;
     margin: 20px auto;
+    font-size: 20px;
 }
 
 #filter-section {
@@ -437,6 +435,7 @@ body.dark .link {
     list-style: none;
     z-index: 1000;
     background-color: var(--beige-grey);
+    justify-content: center;
 }
 
 .dropdown-container {
@@ -446,12 +445,13 @@ body.dark .link {
 
 .dropdown-name {
     padding-right: 50px;
+    font-size: 17px;
 }
 
 .dropdown-name,
 .dropdown {
     border: none;
-    font: inherit;
+    font-family: 'Jost';
     cursor: pointer;
     color: var(--dark-grey);
     background-color: var(--beige-grey);
@@ -471,7 +471,7 @@ body.dark .link {
 }
 
 #gallery-section {
-    margin: 25px 25px 0;
+    margin: 25px 5em 0;
     column-count: 2;
     grid-template-rows: masonry;
     grid-auto-flow: row;
@@ -488,6 +488,7 @@ body.dark .link {
     break-inside: avoid;
     display: block;
     padding: 0;
+    margin-bottom: 22px;
 }
 
 .gallery-item img {
@@ -501,16 +502,9 @@ body.dark .link {
     display: none;
 }
 
-@media (max-width: 600px) {
-    #gallery-section {
-        column-count: 1;
-    }
-}
-
 .image-wrapper {
     position: relative;
     display: inline-block;
-    margin-bottom: 22px;
 }
 
 .image-wrapper::after {
@@ -532,6 +526,26 @@ body.dark .link {
     display: block;
     width: 100%;
     height: auto;
+}
+
+#scroll-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 25px 5em 0;
+    column-gap: 30px;
+}
+
+.item-text {
+    font-family: 'Jost';
+    font-size: 20px;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.item-text-desc {
+    font-size: 15px;
+    text-align: left;
 }
 /* HOME PAGE END */
 
@@ -834,3 +848,10 @@ footer {
 }
 
 /* FOOTER END */
+
+/* HALF SCREEN */
+@media (max-width: 800px) {
+    #gallery-section {
+        column-count: 1;
+    }
+}
