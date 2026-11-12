@@ -14,8 +14,6 @@ Plain HTML, CSS and JavaScript. No build step. Open `index.html` in VS Code with
 ## Documents
 Put your CV at `documents/Vicki-Bui-CV.pdf`.
 
-## Before you publish
-- Fonts: `fonts/Vanity-BoldWide.otf` is included. Confirm its license allows web use. Bodoni Moda and Inter load from Google Fonts.
-- Substack: replace `YOUR-SUBSTACK` in the subscribe form in `blog.html` and the footer Substack link in `js/main.js`.
+## Limitations
 - Contact form uses `mailto:`. For a real form, switch the action to a Formspree address.
 - Write project descriptions in `work.html` and `index.html` (bracketed text is placeholder).
