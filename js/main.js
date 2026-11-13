@@ -11,12 +11,12 @@ const NAV=[["Work","work.html"],["Archive","archive.html"],["About","about.html"
 const page=document.body.dataset.page;
 function fan(w){const h=w/2,r=h-2;let l="";for(let a=0;a<=180;a+=20){const t=a*Math.PI/180;l+=`<line x1="${w/2}" y1="${h}" x2="${(w/2+r*Math.cos(t)).toFixed(1)}" y2="${(h-r*Math.sin(t)).toFixed(1)}"/>`}
 return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true" fill="none" stroke="#A8863A" stroke-width="1.5">${l}<path d="M2 ${h}A${r} ${r} 0 0 1 ${w-2} ${h}"/></svg>`}
-document.getElementById("masthead").innerHTML=`<div class="top label"><span class="fan">${fan(34)}Issue 01 — Fall 2026</span><span>Data Scientist</span></div>
+document.getElementById("masthead").innerHTML=`<div class="top label"><span class="fan">${fan(34)}Issue 01 · Fall 2026</span><span>Data Scientist</span></div>
 <a class="name" href="index.html">Vicki Bui</a>
 <button class="menu-btn label" aria-expanded="false" aria-controls="menu">Menu</button>
 <div class="dr"></div><nav id="menu" aria-label="Main"><ul>${NAV.map(([n,h])=>`<li><a href="${h}"${page===n.toLowerCase()?' aria-current="page"':""}>${n}</a></li>`).join("")}</ul></nav><div class="dr"></div>`;
 const dia='<i class="dia" aria-hidden="true"></i>';
-document.getElementById("footer").innerHTML=`<div class="dr"></div><div class="foot label"><span>© 2026 Vicki Bui</span>${dia}<span>Available for commissions &amp; full-time roles</span>${dia}<span><a href="mailto:vickibui3@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/vickibui">LinkedIn</a> · <a href="https://github.com/vickibui">GitHub</a> · <a href="https://thegroundedtechjournal.substack.com/">Substack</a></span></div>
+document.getElementById("footer").innerHTML=`<div class="dr"></div><div class="foot label"><span>© 2026 Vicki Bui</span>${dia}<span>Available for opportunities &amp; full-time roles</span>${dia}<span><a href="mailto:vickibui3@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/vickibui">LinkedIn</a> · <a href="https://github.com/vickibui">GitHub</a> · <a href="https://thegroundedtechjournal.substack.com/">Substack</a></span></div>
 <p class="colophon"><em>Colophon.</em> Set in Vanity by Hendrick Rolandez, with a Didone serif for headlines and Inter for text. A quiet nod to Art Deco, my favorite style. Coded in VS Code and hosted on GitHub Pages. Issue 01, Fall 2026.</p>`;
 const mb=document.querySelector(".menu-btn"),nv=document.getElementById("menu");
 mb.onclick=()=>{const o=nv.classList.toggle("open");mb.setAttribute("aria-expanded",o)};

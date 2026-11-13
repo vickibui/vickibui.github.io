@@ -16,4 +16,3 @@ Put your CV at `documents/Vicki-Bui-CV.pdf`.
 
 ## Limitations
 - Contact form uses `mailto:`. For a real form, switch the action to a Formspree address.
-- Write project descriptions in `work.html` and `index.html` (bracketed text is placeholder).
