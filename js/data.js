@@ -9,7 +9,7 @@ const ARCHIVE=[
  {title:"Bridge Collapse Machine Learning Model",type:"Project",date:"May 2024",category:["Data Science"],skills:["Machine Learning"],tools:["Python"]},
  {title:"Bus Route Optimization",type:"Project",date:"Dec 2023",category:["Data Science"],skills:["Machine Learning","Optimization"],tools:["Python"]},
  {title:"Coastal Erosion, Wetlands, Sea Level Rise Lecture",type:"Project",date:"Dec 2023",category:["Environmental Science / Sustainability"],skills:["Public Speaking","Research"],tools:[]},
- {title:"Marketing Reach, Cost, Quality Analysis",type:"Project",date:"Aug 2023",category:["Data Science"],skills:["Data Analytics","Data Visualization","Public Speaking"],tools:["Microsoft Excel","Python"]},
+ {title:"Marketing Reach, Cost, Quality Analysis",type:"Project",date:"Aug 2023",category:["Data Science"],skills:["Data Analytics","Data Visualization","Public Speaking"],tools:["Microsoft Excel","Python","SQL"]},
  {title:"Marketing Email Campaign Dashboard",type:"Project",date:"Jul 2023",category:["Data Science"],skills:["Dashboard","Data Analytics","Data Visualization"],tools:["Microsoft Excel","Tableau"]},
  {title:"High Speed Rail",type:"Paper",date:"May 2024",category:["Environmental Science / Sustainability"],skills:[,"Research","Writing"],tools:[]},
  {title:"Government Funding & Racial Disparities",type:"Paper",date:"Jul 2023",category:["Criminology, Law, & Society"],skills:["Research","Writing"],tools:[]},
