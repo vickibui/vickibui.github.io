@@ -2,7 +2,7 @@
 // Category, skills and tools are best guesses from the titles: please correct them.
 const GROUPS={
   category:["Criminology, Law, & Society","Data Science","Environmental Science / Sustainability"],
-  skills:["Dashboard","Data Analytics","Data Engineering","Data Visualization","Machine Learning","Optimization","Public Speaking","Research","Statistics","Writing","3D Modeling"],
+  skills:["Dashboard","Data Analytics","Data Visualization","Machine Learning","Optimization","Public Speaking","Research","Statistics","Writing","3D Modeling"],
   tools:["Microsoft Excel","Python","SQL","Tableau"]};
 const ARCHIVE=[
  {title:"Digital Twins",type:"Project",date:"Dec 2025",category:["Data Science","Environmental Science / Sustainability"],skills:["Data Visualization","Research","3D Modeling"],tools:["Python"]},
