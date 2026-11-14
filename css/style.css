@@ -91,3 +91,4 @@ h2,.h{font:400 clamp(32px,4.2vw,52px)/1.05 var(--serif);margin:0}
 .top span:last-child{display:none}.menu-btn{display:block}
 nav ul{display:none;flex-direction:column;align-items:stretch}nav.open ul{display:flex}nav li+li::before{display:none}
 .row{grid-template-columns:44px 1fr 80px}.row .k{display:none}.intro{flex-direction:column;align-items:start}.foot .dia{display:none}}.foot a:hover,.issue a:hover{color:var(--red)}
+::selection{background:var(--red);color:var(--cream)}
