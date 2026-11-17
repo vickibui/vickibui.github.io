@@ -1,0 +1,32 @@
+/* Extra styles for individual project pages. Link this after style.css. */
+.proj-top{padding-top:40px}
+.back{display:inline-block;margin-bottom:24px}
+.proj-title{font:400 clamp(40px,6vw,84px)/1.02 var(--serif);margin:0}
+.standfirst{font:italic 400 clamp(20px,2.2vw,28px)/1.35 var(--serif);max-width:760px;margin:20px 0 0;color:#3a342b}
+.plate{margin:0}.plate img{display:block;width:100%;height:auto}.plate figcaption{margin-top:10px}
+.proj{display:grid;grid-template-columns:260px 1fr;gap:56px;padding-top:56px}
+.proj aside{align-self:start;position:sticky;top:24px}
+.proj .specs{margin:0;grid-template-columns:80px 1fr}
+.proj .specs dd{line-height:1.5}
+.article{max-width:680px}
+.article h3{font:400 clamp(26px,3vw,36px)/1.1 var(--serif);margin:48px 0 0}
+.article h3:first-child{margin-top:0}
+.article p{margin:14px 0 0;color:#3a342b}
+.steps{list-style:none;margin:20px 0 0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;border-top:1px solid var(--brass);padding:18px 0 18px 56px;position:relative;color:#3a342b}
+.steps li::before{content:counter(s,upper-roman);position:absolute;left:0;top:18px;font:400 22px var(--serif);color:var(--red)}
+.steps b{display:block;font:400 22px/1.2 var(--serif);color:var(--ink);margin-bottom:6px}
+.steps span{display:block;margin-top:8px}
+.steps .label{color:var(--red)}
+.pager{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin:72px var(--pad) 0;padding:22px 0;border-top:1px solid var(--brass);border-bottom:1px solid var(--brass)}
+@media(max-width:860px){.proj{grid-template-columns:1fr;gap:32px;padding-top:36px}.proj aside{position:static}}
+
+/* Image slider */
+.slider{position:relative;outline-offset:8px}
+.slide{display:none;margin:0}.slide.is-active{display:block}
+.slide img{display:block;width:100%;height:auto}
+.slide figcaption{margin-top:10px;padding-right:150px;min-height:34px;font-size:14px;line-height:1.5;color:var(--mute)}
+.slider-bar{position:absolute;right:0;bottom:0;display:flex;align-items:center;gap:6px}
+.arrow{font:400 20px/1 var(--sans);background:none;border:0;cursor:pointer;color:var(--ink);padding:6px 10px}
+.arrow:hover{color:var(--red)}
+.arrow:focus-visible{outline:2px solid var(--red)}

@@ -52,3 +52,15 @@ function openExternal(){
   });
 }
 openExternal();
+
+// PROJECT PAGE IMAGE SLIDER
+document.querySelectorAll("[data-slider]").forEach(sl=>{
+  const slides=[...sl.querySelectorAll(".slide")],count=sl.querySelector(".count"),
+        prev=sl.querySelector("[data-prev]"),next=sl.querySelector("[data-next]"),n=slides.length;
+  let i=0;
+  const show=k=>{i=(k+n)%n;slides.forEach((s,j)=>s.classList.toggle("is-active",j===i));count.textContent=`${i+1}/${n}`};
+  if(n<2){prev.hidden=true;next.hidden=true}          // one image: no arrows, count shows 1/1
+  prev.onclick=()=>show(i-1);next.onclick=()=>show(i+1);
+  sl.addEventListener("keydown",e=>{if(n<2)return;if(e.key==="ArrowLeft")show(i-1);if(e.key==="ArrowRight")show(i+1)});
+  show(0);
+});
