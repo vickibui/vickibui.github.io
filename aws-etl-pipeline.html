@@ -1,98 +1,599 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Work: AWS ETL Pipeline · Vicki Bui</title>
-<link rel="icon" type="image/svg+xml" href="images\Planet_Mars-cropped.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&family=Inter:wght@400;500&display=swap">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/project.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Work: AWS ETL Pipeline · Vicki Bui</title>
+  <link rel="icon" type="image/svg+xml" href="images\Planet_Mars-cropped.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&family=Inter:wght@400;500&display=swap">
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/project.css">
 </head>
-<body data-page="work">
-<div class="max">
-<header id="masthead"></header>
-<main>
+<!-- data-root="../" tells main.js to build the menu links from the site's top folder -->
 
-<!-- TOP OF PAGE: back link, label, title, one-sentence summary -->
-<section class="proj-top">
-  <a class="label back" href="work.html">← The Features</a>
-  <div class="label red tag">Feature III</div>                       <!-- EDIT: Feature number / category -->
-  <h1 class="proj-title">AWS ETL Pipeline</h1>                        <!-- EDIT: project title -->
-  <p class="standfirst">Turning scattered earth science files into one database the Data Visualization team can query.</p> <!-- EDIT -->
-</section>
+<body data-page="work" data-root="../">
+  <div class="max">
+    <header id="masthead"></header>
+    <main>
 
-<!-- MAIN IMAGE: put a file in images/ and change the name. Keep alt text descriptive. -->
-<section style="padding-top:40px">
-  <figure class="plate">
-    <img src="images/work/work-3.jpg" alt="Diagram of the pipeline: source files uploaded to AWS S3, transformed by AWS Glue, and loaded into AWS RDS PostgreSQL" onerror="this.remove()">
-    <figcaption class="label mute">Pipeline architecture</figcaption>
-  </figure>
-</section>
+      <!-- TOP OF PAGE: back link, then title (left 40%) and images (right 60%). On phones the images drop below the title. -->
+      <section class="proj-top">
+        <a class="label back" href="../work.html">← The Features</a>
+        <div class="hero-split">
+          <div class="hero-text">
+            <div class="label red tag">Feature III · Data Engineering</div> <!-- EDIT: feature number and category -->
+            <h1 class="proj-title">AWS ETL Pipeline</h1> <!-- EDIT: project title -->
+            <p class="standfirst">Turning scattered subsurface geologic data files into one database the Data
+              Visualization team can query.</p> <!-- EDIT -->
+            <div class="byline label"></div>
+          </div>
 
-<!-- IMAGES: one <figure class="slide"> per image. Keep the first one as is.
-     ONE image: delete the second <figure>. The count then shows 1/1 and the arrows hide.
-     TWO images: keep both. The count shows 1/2 and the arrows appear. -->
-<section style="padding-top:40px">
-  <div class="slider" data-slider tabindex="0" role="region" aria-roledescription="carousel" aria-label="Project images">
-    <figure class="slide">
-      <img src="../images/work-3.jpg" alt="Diagram of the pipeline: source files uploaded to AWS S3, transformed by AWS Glue, and loaded into AWS RDS PostgreSQL" onerror="this.remove()">
-      <figcaption>Pipeline architecture from raw files to the PostgreSQL database.</figcaption>   <!-- EDIT caption -->
-    </figure>
-    <div class="slider-bar">
-      <button class="arrow" data-prev aria-label="Previous image">←</button>
-      <span class="count label" aria-live="polite">1/2</span>
-      <button class="arrow" data-next aria-label="Next image">→</button>
-    </div>
+          <!-- IMAGES: one <figure class="slide"> per image.
+         ONE image: delete the second <figure>. The count shows 1/1 and the arrows hide.
+         TWO images: keep both. The count shows 1/2 and the arrows appear. -->
+          <div class="slider" data-slider tabindex="0" role="region" aria-roledescription="carousel"
+            aria-label="Project images">
+            <figure class="slide">
+              <div class="stage">
+                <button class="arrow prev" data-prev aria-label="Previous image"><svg width="14" height="26"
+                    viewBox="0 0 14 26" aria-hidden="true">
+                    <path d="M12 2L2 13l10 11" fill="none" stroke="currentColor" stroke-width="1.5" />
+                  </svg></button>
+                <img src="../images/work/work-3.jpg" alt="Diagram of the pipeline"
+                  onerror="this.parentNode.classList.add('missing');this.remove()">
+                <button class="arrow next" data-next aria-label="Next image"><svg width="14" height="26"
+                    viewBox="0 0 14 26" aria-hidden="true">
+                    <path d="M2 2l10 11L2 24" fill="none" stroke="currentColor" stroke-width="1.5" />
+                  </svg></button>
+              </div>
+              <figcaption>Pipeline architecture from raw files to the PostgreSQL database.</figcaption>
+            </figure>
+            <!-- <figure class="slide">
+              <div class="stage">
+                <button class="arrow prev" data-prev aria-label="Previous image"><svg width="14" height="26"
+                    viewBox="0 0 14 26" aria-hidden="true">
+                    <path d="M12 2L2 13l10 11" fill="none" stroke="currentColor" stroke-width="1.5" />
+                  </svg></button>
+                <img src="../images/work-3b.jpg" alt="[Describe the second image]"
+                  onerror="this.parentNode.classList.add('missing');this.remove()">
+                <button class="arrow next" data-next aria-label="Next image"><svg width="14" height="26"
+                    viewBox="0 0 14 26" aria-hidden="true">
+                    <path d="M2 2l10 11L2 24" fill="none" stroke="currentColor" stroke-width="1.5" />
+                  </svg></button>
+              </div>
+              <figcaption>[Caption for the second image.]</figcaption>
+            </figure> -->
+            <div class="slider-bar"><span class="count" aria-live="polite">1/2</span></div>
+          </div>
+      </section>
+
+      <!-- OPENING TEXT: two columns with a drop cap, and a fact sheet on the right -->
+      <section class="lede">
+        <div class="twocol">
+          <p class="drop">Subsurface geologic data comes in many formats and from many places, so it is hard to
+            visualize in layers without additional transformation. The Data Visualization team needed everything in one
+            queryable location.</p>
+          <h3 class="sub">Extract</h3>
+          <p>Datasets for different earth layers, such as GeoTIFF for elevation and JSON for well logs, arrived through
+            different channels, some sent in Slack and some shared through Dropbox links. They were gathered and
+            uploaded into a single AWS S3 bucket.</p>
+        </div>
+        <aside class="glance box">
+          <div class="label red tag">At a glance</div>
+          <dl class="specs label">
+            <dt>Role</dt>
+            <dd>Data Visualization Developer</dd> <!-- EDIT these rows; delete any you don't need -->
+            <dt>Year</dt>
+            <dd>2026</dd>
+            <dt>Tools</dt>
+            <dd>Python, AWS: S3, Glue, RDS (PostgreSQL)</dd>
+          </dl>
+          <!--  <p style="margin:20px 0 0"><a class="label link" href="#">View the code →</a></p>  -->
+          <!-- EDIT link, or delete this line -->
+        </aside>
+      </section>
+
+      <!-- PULL QUOTE: one big line between sections -->
+      <section class="pullq">
+        <div class="dr"></div>
+        <blockquote style="font-size:35px">Several formats in, one queryable database out.</blockquote> <!-- EDIT -->
+        <div class="dr"></div>
+      </section>
+
+      <!-- THE FOUR JOBS: copy one <article class="job"> to add another. Each has a mini visual (the <svg>). -->
+      <section class="jobs-wrap">
+        <h3 class="sub">Transform</h3>
+        <p>AWS Glue ETL Jobs, one for each kind of data.</p>
+        <div class="jobs">
+          <article class="job">
+            <div class="num">I</div><svg class="mv" viewBox="0 0 300 120" role="img"
+              aria-label="Elevation raster grid reduced to a few points, then listed as longitude, latitude and elevation">
+              <title>Elevation raster grid reduced to a few points, then listed as longitude, latitude and elevation
+              </title>
+              <rect x="10" y="18" width="14" height="14" fill="#A8863A" fill-opacity="0.06" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <circle cx="17" cy="25" r="3.3" fill="#B3202A" />
+              <rect x="24" y="18" width="14" height="14" fill="#A8863A" fill-opacity="0.15" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="38" y="18" width="14" height="14" fill="#A8863A" fill-opacity="0.24" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="52" y="18" width="14" height="14" fill="#A8863A" fill-opacity="0.06" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <circle cx="59" cy="25" r="3.3" fill="#B3202A" />
+              <rect x="66" y="18" width="14" height="14" fill="#A8863A" fill-opacity="0.15" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="80" y="18" width="14" height="14" fill="#A8863A" fill-opacity="0.24" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="94" y="18" width="14" height="14" fill="#A8863A" fill-opacity="0.06" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <circle cx="101" cy="25" r="3.3" fill="#B3202A" />
+              <rect x="10" y="32" width="14" height="14" fill="#A8863A" fill-opacity="0.20" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="24" y="32" width="14" height="14" fill="#A8863A" fill-opacity="0.28" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="38" y="32" width="14" height="14" fill="#A8863A" fill-opacity="0.10" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="52" y="32" width="14" height="14" fill="#A8863A" fill-opacity="0.20" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="66" y="32" width="14" height="14" fill="#A8863A" fill-opacity="0.28" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="80" y="32" width="14" height="14" fill="#A8863A" fill-opacity="0.10" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="94" y="32" width="14" height="14" fill="#A8863A" fill-opacity="0.20" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="10" y="46" width="14" height="14" fill="#A8863A" fill-opacity="0.06" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="24" y="46" width="14" height="14" fill="#A8863A" fill-opacity="0.15" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="38" y="46" width="14" height="14" fill="#A8863A" fill-opacity="0.24" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="52" y="46" width="14" height="14" fill="#A8863A" fill-opacity="0.06" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="66" y="46" width="14" height="14" fill="#A8863A" fill-opacity="0.15" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="80" y="46" width="14" height="14" fill="#A8863A" fill-opacity="0.24" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="94" y="46" width="14" height="14" fill="#A8863A" fill-opacity="0.06" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="10" y="60" width="14" height="14" fill="#A8863A" fill-opacity="0.20" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <circle cx="17" cy="67" r="3.3" fill="#B3202A" />
+              <rect x="24" y="60" width="14" height="14" fill="#A8863A" fill-opacity="0.28" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="38" y="60" width="14" height="14" fill="#A8863A" fill-opacity="0.10" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="52" y="60" width="14" height="14" fill="#A8863A" fill-opacity="0.20" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <circle cx="59" cy="67" r="3.3" fill="#B3202A" />
+              <rect x="66" y="60" width="14" height="14" fill="#A8863A" fill-opacity="0.28" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="80" y="60" width="14" height="14" fill="#A8863A" fill-opacity="0.10" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="94" y="60" width="14" height="14" fill="#A8863A" fill-opacity="0.20" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <circle cx="101" cy="67" r="3.3" fill="#B3202A" />
+              <rect x="10" y="74" width="14" height="14" fill="#A8863A" fill-opacity="0.06" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="24" y="74" width="14" height="14" fill="#A8863A" fill-opacity="0.15" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="38" y="74" width="14" height="14" fill="#A8863A" fill-opacity="0.24" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="52" y="74" width="14" height="14" fill="#A8863A" fill-opacity="0.06" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="66" y="74" width="14" height="14" fill="#A8863A" fill-opacity="0.15" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="80" y="74" width="14" height="14" fill="#A8863A" fill-opacity="0.24" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="94" y="74" width="14" height="14" fill="#A8863A" fill-opacity="0.06" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="10" y="88" width="14" height="14" fill="#A8863A" fill-opacity="0.20" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="24" y="88" width="14" height="14" fill="#A8863A" fill-opacity="0.28" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="38" y="88" width="14" height="14" fill="#A8863A" fill-opacity="0.10" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="52" y="88" width="14" height="14" fill="#A8863A" fill-opacity="0.20" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="66" y="88" width="14" height="14" fill="#A8863A" fill-opacity="0.28" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="80" y="88" width="14" height="14" fill="#A8863A" fill-opacity="0.10" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <rect x="94" y="88" width="14" height="14" fill="#A8863A" fill-opacity="0.20" stroke="#D8D0C2"
+                stroke-width=".6" />
+              <line x1="116" y1="64" x2="146" y2="64" stroke="#A8863A" stroke-width="1.2" />
+              <polygon points="152,64 145,60.5 145,67.5" fill="#141210" /><text x="134.0" y="57"
+                font-family="Inter,sans-serif" font-weight="600" font-size="6.5" letter-spacing=".4" fill="#141210"
+                text-anchor="middle">KEEP 1 IN 10</text><text x="162" y="26" font-family="Inter,sans-serif"
+                font-weight="600" font-size="6.2" letter-spacing=".4" fill="#5c554a" text-anchor="start">LON</text><text
+                x="194" y="26" font-family="Inter,sans-serif" font-weight="600" font-size="6.2" letter-spacing=".4"
+                fill="#5c554a" text-anchor="start">LAT</text><text x="226" y="26" font-family="Inter,sans-serif"
+                font-weight="600" font-size="6.2" letter-spacing=".4" fill="#5c554a"
+                text-anchor="start">ELEV.</text><text x="258" y="26" font-family="Inter,sans-serif" font-weight="600"
+                font-size="6.2" letter-spacing=".4" fill="#5c554a" text-anchor="start">TILE</text>
+              <line x1="160" y1="32" x2="290" y2="32" stroke="#141210" stroke-width="1" />
+              <rect x="162" y="38.5" width="10" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="194" y="38.5" width="22" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="226" y="38.5" width="20" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="258" y="38.5" width="15" height="4" rx="2" fill="#141210" opacity=".3" />
+              <line x1="160" y1="49" x2="290" y2="49" stroke="#A8863A" stroke-width=".7" />
+              <rect x="162" y="55.5" width="15" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="194" y="55.5" width="10" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="226" y="55.5" width="22" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="258" y="55.5" width="20" height="4" rx="2" fill="#141210" opacity=".3" />
+              <line x1="160" y1="66" x2="290" y2="66" stroke="#A8863A" stroke-width=".7" />
+              <rect x="162" y="72.5" width="20" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="194" y="72.5" width="15" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="226" y="72.5" width="10" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="258" y="72.5" width="24" height="4" rx="2" fill="#141210" opacity=".3" />
+              <line x1="160" y1="83" x2="290" y2="83" stroke="#A8863A" stroke-width=".7" />
+              <rect x="162" y="89.5" width="22" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="194" y="89.5" width="20" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="226" y="89.5" width="15" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="258" y="89.5" width="10" height="4" rx="2" fill="#141210" opacity=".3" />
+            </svg>
+            <h3>Elevation Rasters</h3>
+            <p>Reads GeoTIFF elevation tiles, keeps every tenth pixel in each direction, drops “no data” pixels and
+              converts each pixel to longitude and latitude.</p>
+          </article>
+          <article class="job">
+            <div class="num">II</div><svg class="mv" viewBox="0 0 300 120" role="img"
+              aria-label="A borehole with three measurement curves, listed as one table row per curve">
+              <title>A borehole with three measurement curves, listed as one table row per curve</title>
+              <rect x="24" y="14" width="16" height="92" fill="none" stroke="#141210" stroke-width="1.2" />
+              <line x1="18" y1="22" x2="24" y2="22" stroke="#141210" stroke-width=".8" />
+              <line x1="18" y1="35" x2="24" y2="35" stroke="#141210" stroke-width=".8" />
+              <line x1="18" y1="48" x2="24" y2="48" stroke="#141210" stroke-width=".8" />
+              <line x1="18" y1="61" x2="24" y2="61" stroke="#141210" stroke-width=".8" />
+              <line x1="18" y1="74" x2="24" y2="74" stroke="#141210" stroke-width=".8" />
+              <line x1="18" y1="87" x2="24" y2="87" stroke="#141210" stroke-width=".8" />
+              <line x1="18" y1="100" x2="24" y2="100" stroke="#141210" stroke-width=".8" />
+              <polyline
+                points="63.1,14 60.1,17 56.7,20 53.5,23 51.5,26 51.1,29 52.3,32 55.0,35 58.4,38 61.7,41 64.1,44 65.0,47 64.2,50 61.9,53 58.6,56 55.2,59 52.5,62 51.1,65 51.4,68 53.3,71 56.4,74 59.8,77 62.9,80 64.7,83 64.9,86 63.4,89 60.6,92 57.1,95 53.9,98 51.7,101 51.0,104"
+                fill="none" stroke="#B3202A" stroke-width="1.4" />
+              <polyline
+                points="74.6,14 73.1,17 73.4,20 75.2,23 78.3,26 81.7,29 84.8,32 86.6,35 86.9,38 85.4,41 82.7,44 79.2,47 76.0,50 73.7,53 73.0,56 74.0,59 76.4,62 79.8,65 83.2,68 85.8,71 87.0,74 86.5,77 84.4,80 81.2,83 77.8,86 74.9,89 73.2,92 73.2,95 74.9,98 77.8,101 81.3,104"
+                fill="none" stroke="#A8863A" stroke-width="1.4" />
+              <polyline
+                points="98.3,14 101.7,17 105.0,20 107.7,23 108.9,26 108.5,29 106.5,32 103.3,35 99.9,38 96.9,41 95.2,44 95.2,47 96.8,50 99.7,53 103.2,56 106.3,59 108.4,62 109.0,65 107.8,68 105.2,71 101.8,74 98.5,77 96.0,80 95.0,83 95.7,86 98.0,89 101.2,92 104.6,95 107.4,98 108.9,101 108.7,104"
+                fill="none" stroke="#141210" stroke-width="1.4" />
+              <line x1="124" y1="64" x2="150" y2="64" stroke="#A8863A" stroke-width="1.2" />
+              <polygon points="156,64 149,60.5 149,67.5" fill="#141210" /><text x="140.0" y="50"
+                font-family="Inter,sans-serif" font-weight="600" font-size="6.5" letter-spacing=".4" fill="#141210"
+                text-anchor="middle">ONE ROW</text><text x="140.0" y="58" font-family="Inter,sans-serif"
+                font-weight="600" font-size="6.5" letter-spacing=".4" fill="#141210" text-anchor="middle">PER
+                CURVE</text><text x="162" y="26" font-family="Inter,sans-serif" font-weight="600" font-size="6.2"
+                letter-spacing=".4" fill="#5c554a" text-anchor="start">CURVE</text><text x="200" y="26"
+                font-family="Inter,sans-serif" font-weight="600" font-size="6.2" letter-spacing=".4" fill="#5c554a"
+                text-anchor="start">UNIT</text><text x="226" y="26" font-family="Inter,sans-serif" font-weight="600"
+                font-size="6.2" letter-spacing=".4" fill="#5c554a" text-anchor="start">DEPTH</text><text x="258" y="26"
+                font-family="Inter,sans-serif" font-weight="600" font-size="6.2" letter-spacing=".4" fill="#5c554a"
+                text-anchor="start">POINTS</text>
+              <line x1="160" y1="32" x2="290" y2="32" stroke="#141210" stroke-width="1" />
+              <circle cx="166" cy="40.5" r="3" fill="#B3202A" />
+              <rect x="173" y="38.5" width="6" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="200" y="38.5" width="16" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="226" y="38.5" width="20" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="258" y="38.5" width="15" height="4" rx="2" fill="#141210" opacity=".3" />
+              <line x1="160" y1="49" x2="290" y2="49" stroke="#A8863A" stroke-width=".7" />
+              <circle cx="166" cy="57.5" r="3" fill="#A8863A" />
+              <rect x="173" y="55.5" width="11" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="200" y="55.5" width="10" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="226" y="55.5" width="22" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="258" y="55.5" width="20" height="4" rx="2" fill="#141210" opacity=".3" />
+              <line x1="160" y1="66" x2="290" y2="66" stroke="#A8863A" stroke-width=".7" />
+              <circle cx="166" cy="74.5" r="3" fill="#141210" />
+              <rect x="173" y="72.5" width="16" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="200" y="72.5" width="15" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="226" y="72.5" width="10" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="258" y="72.5" width="24" height="4" rx="2" fill="#141210" opacity=".3" />
+              <line x1="160" y1="83" x2="290" y2="83" stroke="#A8863A" stroke-width=".7" />
+              <circle cx="166" cy="91.5" r="3" fill="#5c554a" />
+              <rect x="173" y="89.5" width="21" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="200" y="89.5" width="16" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="226" y="89.5" width="15" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="258" y="89.5" width="10" height="4" rx="2" fill="#141210" opacity=".3" />
+            </svg>
+            <h3>Well Logs</h3>
+            <p>Flattens one JSON file per well into one row per measurement curve, with the well ID, unit, depth range
+              and number of data points. Files that fail are logged and skipped.</p>
+          </article>
+          <article class="job">
+            <div class="num">III</div><svg class="mv" viewBox="0 0 300 120" role="img"
+              aria-label="Layers of a three-dimensional model grid listed as one table row per cell with x, y, z, density and susceptibility">
+              <title>Layers of a three-dimensional model grid listed as one table row per cell with x, y, z, density and
+                susceptibility</title>
+              <rect x="34" y="28" width="48" height="48" fill="#F3EFE7" stroke="#141210" stroke-width=".9" />
+              <rect x="34" y="28" width="12" height="12" fill="#A8863A" fill-opacity="0.08" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="34" y="40" width="12" height="12" fill="#A8863A" fill-opacity="0.38" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="34" y="52" width="12" height="12" fill="#A8863A" fill-opacity="0.18" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="34" y="64" width="12" height="12" fill="#A8863A" fill-opacity="0.48" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="46" y="28" width="12" height="12" fill="#A8863A" fill-opacity="0.28" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="46" y="40" width="12" height="12" fill="#A8863A" fill-opacity="0.08" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="46" y="52" width="12" height="12" fill="#A8863A" fill-opacity="0.38" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="46" y="64" width="12" height="12" fill="#A8863A" fill-opacity="0.18" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="58" y="28" width="12" height="12" fill="#A8863A" fill-opacity="0.48" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="58" y="40" width="12" height="12" fill="#A8863A" fill-opacity="0.28" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="58" y="52" width="12" height="12" fill="#A8863A" fill-opacity="0.08" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="58" y="64" width="12" height="12" fill="#A8863A" fill-opacity="0.38" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="70" y="28" width="12" height="12" fill="#A8863A" fill-opacity="0.18" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="70" y="40" width="12" height="12" fill="#A8863A" fill-opacity="0.48" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="70" y="52" width="12" height="12" fill="#A8863A" fill-opacity="0.28" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="70" y="64" width="12" height="12" fill="#A8863A" fill-opacity="0.08" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="24" y="37" width="48" height="48" fill="#F3EFE7" stroke="#141210" stroke-width=".9" />
+              <rect x="24" y="37" width="12" height="12" fill="#A8863A" fill-opacity="0.08" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="24" y="49" width="12" height="12" fill="#A8863A" fill-opacity="0.38" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="24" y="61" width="12" height="12" fill="#A8863A" fill-opacity="0.18" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="24" y="73" width="12" height="12" fill="#A8863A" fill-opacity="0.48" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="36" y="37" width="12" height="12" fill="#A8863A" fill-opacity="0.28" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="36" y="49" width="12" height="12" fill="#A8863A" fill-opacity="0.08" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="36" y="61" width="12" height="12" fill="#A8863A" fill-opacity="0.38" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="36" y="73" width="12" height="12" fill="#A8863A" fill-opacity="0.18" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="48" y="37" width="12" height="12" fill="#A8863A" fill-opacity="0.48" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="48" y="49" width="12" height="12" fill="#A8863A" fill-opacity="0.28" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="48" y="61" width="12" height="12" fill="#A8863A" fill-opacity="0.08" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="48" y="73" width="12" height="12" fill="#A8863A" fill-opacity="0.38" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="60" y="37" width="12" height="12" fill="#A8863A" fill-opacity="0.18" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="60" y="49" width="12" height="12" fill="#A8863A" fill-opacity="0.48" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="60" y="61" width="12" height="12" fill="#A8863A" fill-opacity="0.28" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="60" y="73" width="12" height="12" fill="#A8863A" fill-opacity="0.08" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="14" y="46" width="48" height="48" fill="#F3EFE7" stroke="#141210" stroke-width=".9" />
+              <rect x="14" y="46" width="12" height="12" fill="#A8863A" fill-opacity="0.08" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="14" y="58" width="12" height="12" fill="#A8863A" fill-opacity="0.38" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="14" y="70" width="12" height="12" fill="#A8863A" fill-opacity="0.18" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="14" y="82" width="12" height="12" fill="#A8863A" fill-opacity="0.48" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="26" y="46" width="12" height="12" fill="#A8863A" fill-opacity="0.28" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="26" y="58" width="12" height="12" fill="#A8863A" fill-opacity="0.08" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="26" y="70" width="12" height="12" fill="#A8863A" fill-opacity="0.38" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="26" y="82" width="12" height="12" fill="#A8863A" fill-opacity="0.18" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="38" y="46" width="12" height="12" fill="#A8863A" fill-opacity="0.48" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="38" y="58" width="12" height="12" fill="#A8863A" fill-opacity="0.28" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="38" y="70" width="12" height="12" fill="#A8863A" fill-opacity="0.08" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="38" y="82" width="12" height="12" fill="#A8863A" fill-opacity="0.38" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="50" y="46" width="12" height="12" fill="#A8863A" fill-opacity="0.18" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="50" y="58" width="12" height="12" fill="#A8863A" fill-opacity="0.48" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="50" y="70" width="12" height="12" fill="#A8863A" fill-opacity="0.28" stroke="#D8D0C2"
+                stroke-width=".5" />
+              <rect x="50" y="82" width="12" height="12" fill="#A8863A" fill-opacity="0.08" stroke="#D8D0C2"
+                stroke-width=".5" /><text x="48" y="112" font-family="Inter,sans-serif" font-weight="600"
+                font-size="6.2" letter-spacing=".4" fill="#5c554a" text-anchor="middle">3D MODEL CELLS</text>
+              <line x1="92" y1="64" x2="120" y2="64" stroke="#A8863A" stroke-width="1.2" />
+              <polygon points="126,64 119,60.5 119,67.5" fill="#141210" /><text x="109.0" y="50"
+                font-family="Inter,sans-serif" font-weight="600" font-size="6.5" letter-spacing=".4" fill="#141210"
+                text-anchor="middle">ONE ROW</text><text x="109.0" y="58" font-family="Inter,sans-serif"
+                font-weight="600" font-size="6.5" letter-spacing=".4" fill="#141210" text-anchor="middle">PER
+                CELL</text><text x="138" y="26" font-family="Inter,sans-serif" font-weight="600" font-size="6.2"
+                letter-spacing=".4" fill="#5c554a" text-anchor="start">X</text><text x="156" y="26"
+                font-family="Inter,sans-serif" font-weight="600" font-size="6.2" letter-spacing=".4" fill="#5c554a"
+                text-anchor="start">Y</text><text x="174" y="26" font-family="Inter,sans-serif" font-weight="600"
+                font-size="6.2" letter-spacing=".4" fill="#5c554a" text-anchor="start">Z</text><text x="192" y="26"
+                font-family="Inter,sans-serif" font-weight="600" font-size="6.2" letter-spacing=".4" fill="#5c554a"
+                text-anchor="start">DENSITY</text><text x="240" y="26" font-family="Inter,sans-serif" font-weight="600"
+                font-size="6.2" letter-spacing=".4" fill="#5c554a" text-anchor="start">SUSCEPT.</text>
+              <line x1="136" y1="32" x2="286" y2="32" stroke="#141210" stroke-width="1" />
+              <rect x="138" y="38.5" width="8" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="156" y="38.5" width="8" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="174" y="38.5" width="8" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="192" y="38.5" width="15" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="240" y="38.5" width="10" height="4" rx="2" fill="#141210" opacity=".3" />
+              <line x1="136" y1="49" x2="286" y2="49" stroke="#A8863A" stroke-width=".7" />
+              <rect x="138" y="55.5" width="8" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="156" y="55.5" width="8" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="174" y="55.5" width="8" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="192" y="55.5" width="20" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="240" y="55.5" width="15" height="4" rx="2" fill="#141210" opacity=".3" />
+              <line x1="136" y1="66" x2="286" y2="66" stroke="#A8863A" stroke-width=".7" />
+              <rect x="138" y="72.5" width="8" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="156" y="72.5" width="8" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="174" y="72.5" width="8" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="192" y="72.5" width="25" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="240" y="72.5" width="20" height="4" rx="2" fill="#141210" opacity=".3" />
+              <line x1="136" y1="83" x2="286" y2="83" stroke="#A8863A" stroke-width=".7" />
+              <rect x="138" y="89.5" width="8" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="156" y="89.5" width="8" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="174" y="89.5" width="8" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="192" y="89.5" width="10" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="240" y="89.5" width="25" height="4" rx="2" fill="#141210" opacity=".3" />
+            </svg>
+            <h3>Joint Inversion Model</h3>
+            <p>Reads 3D cell center coordinates and two estimated values per cell, density and magnetic susceptibility,
+              from a NumPy archive.</p>
+          </article>
+          <article class="job">
+            <div class="num">IV</div><svg class="mv" viewBox="0 0 300 120" role="img"
+              aria-label="A folder of map files listed in a table with path, type, size and modified date">
+              <title>A folder of map files listed in a table with path, type, size and modified date</title>
+              <path d="M12 36H40L46 28H100V100H12Z" fill="none" stroke="#141210" stroke-width="1.2" />
+              <path d="M20 48h16l7 7v27h-23z" fill="#F3EFE7" stroke="#141210" stroke-width=".9" />
+              <path d="M36 48v7h7" fill="none" stroke="#141210" stroke-width=".9" />
+              <line x1="24" y1="64" x2="38" y2="64" stroke="#A8863A" stroke-width="1.2" />
+              <line x1="24" y1="70" x2="38" y2="70" stroke="#A8863A" stroke-width="1.2" />
+              <path d="M44 54h16l7 7v27h-23z" fill="#F3EFE7" stroke="#141210" stroke-width=".9" />
+              <path d="M60 54v7h7" fill="none" stroke="#141210" stroke-width=".9" />
+              <line x1="48" y1="70" x2="62" y2="70" stroke="#A8863A" stroke-width="1.2" />
+              <line x1="48" y1="76" x2="62" y2="76" stroke="#A8863A" stroke-width="1.2" />
+              <path d="M62 46h16l7 7v27h-23z" fill="#F3EFE7" stroke="#141210" stroke-width=".9" />
+              <path d="M78 46v7h7" fill="none" stroke="#141210" stroke-width=".9" />
+              <line x1="66" y1="62" x2="80" y2="62" stroke="#A8863A" stroke-width="1.2" />
+              <line x1="66" y1="68" x2="80" y2="68" stroke="#A8863A" stroke-width="1.2" />
+              <line x1="108" y1="64" x2="134" y2="64" stroke="#A8863A" stroke-width="1.2" />
+              <polygon points="140,64 133,60.5 133,67.5" fill="#141210" /><text x="124.0" y="57"
+                font-family="Inter,sans-serif" font-weight="600" font-size="6.5" letter-spacing=".4" fill="#141210"
+                text-anchor="middle">CATALOG</text><text x="150" y="26" font-family="Inter,sans-serif" font-weight="600"
+                font-size="6.2" letter-spacing=".4" fill="#5c554a" text-anchor="start">PATH</text><text x="194" y="26"
+                font-family="Inter,sans-serif" font-weight="600" font-size="6.2" letter-spacing=".4" fill="#5c554a"
+                text-anchor="start">TYPE</text><text x="222" y="26" font-family="Inter,sans-serif" font-weight="600"
+                font-size="6.2" letter-spacing=".4" fill="#5c554a" text-anchor="start">SIZE</text><text x="252" y="26"
+                font-family="Inter,sans-serif" font-weight="600" font-size="6.2" letter-spacing=".4" fill="#5c554a"
+                text-anchor="start">MODIFIED</text>
+              <line x1="148" y1="32" x2="288" y2="32" stroke="#141210" stroke-width="1" />
+              <rect x="150" y="38.5" width="10" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="194" y="38.5" width="18" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="222" y="38.5" width="20" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="252" y="38.5" width="15" height="4" rx="2" fill="#141210" opacity=".3" />
+              <line x1="148" y1="49" x2="288" y2="49" stroke="#A8863A" stroke-width=".7" />
+              <rect x="150" y="55.5" width="15" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="194" y="55.5" width="10" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="222" y="55.5" width="20" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="252" y="55.5" width="20" height="4" rx="2" fill="#141210" opacity=".3" />
+              <line x1="148" y1="66" x2="288" y2="66" stroke="#A8863A" stroke-width=".7" />
+              <rect x="150" y="72.5" width="20" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="194" y="72.5" width="15" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="222" y="72.5" width="10" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="252" y="72.5" width="25" height="4" rx="2" fill="#141210" opacity=".3" />
+              <line x1="148" y1="83" x2="288" y2="83" stroke="#A8863A" stroke-width=".7" />
+              <rect x="150" y="89.5" width="25" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="194" y="89.5" width="18" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="222" y="89.5" width="15" height="4" rx="2" fill="#141210" opacity=".3" />
+              <rect x="252" y="89.5" width="10" height="4" rx="2" fill="#141210" opacity=".3" />
+            </svg>
+            <h3>USGS Geologic Map Schema (GeMS)</h3>
+            <p>Builds a metadata inventory of an extracted folder of USGS geologic map files in the GeMS format: file
+              path, name, type, size and last-modified date.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- CLOSING TEXT -->
+      <section class="closing">
+        <div class="closing-grid">
+          <div>
+            <h3 class="sub">Load</h3>
+            <p>The results go into a PostgreSQL database on AWS RDS, so the Data Visualization team can query the data
+              directly with SQL.</p>
+          </div>
+          <div>
+            <h3 class="sub">What I Would Do Next</h3>
+            <p>With more time, I would automate the first step. Instead of uploading files by hand, I would pull them
+              into S3 with code, using an API where a source such as Dropbox or Slack offers one and a scheduled script
+              where it doesn't, and have the Glue ETL Jobs start automatically when new files arrive. I would also add
+              checks that flag missing or out-of-range values before anything is loaded, and store the actual well-log
+              measurements, not only the catalog of curves, so the database can answer more questions.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="gloss">
+        <div class="label red tag">Glossary</div>
+        <dl class="glossary">
+          <div>
+            <dt>borehole</dt>
+            <dd>A narrow hole drilled into the ground, such as a well, that instruments can be lowered into to measure
+              the rock around it.</dd>
+          </div>
+          <div>
+            <dt>cell center</dt>
+            <dd>The 3D model divides the ground into many small blocks called cells. The cell center is the x, y and z
+              position at the middle of one block.</dd>
+          </div>
+          <div>
+            <dt>GeMS</dt>
+            <dd>Geologic Map Schema, the USGS standard format for publishing digital geologic maps.</dd>
+          </div>
+          <div>
+            <dt>GeoTIFF</dt>
+            <dd>An image file that also stores geographic location, so every pixel can be placed on the Earth. Often
+              used for elevation maps and satellite images.</dd>
+          </div>
+          <div>
+            <dt>HDF</dt>
+            <dd>Hierarchical Data Format, a file format that holds large, complex scientific datasets, many tables and
+              arrays in one file. Common for satellite data.</dd>
+          </div>
+          <div>
+            <dt>joint inversion</dt>
+            <dd>A method that uses two or more kinds of measurements together to estimate what lies underground, instead
+              of interpreting each one separately.</dd>
+          </div>
+          <div>
+            <dt>magnetic susceptibility</dt>
+            <dd>A measure of how strongly a material becomes magnetized in a magnetic field. Different rocks respond
+              differently, which helps map what is underground.</dd>
+          </div>
+          <div>
+            <dt>measurement curve</dt>
+            <dd>A record of one measurement taken along the depth of a well, such as natural radioactivity or electrical
+              resistance.</dd>
+          </div>
+          <div>
+            <dt>netCDF</dt>
+            <dd>Network Common Data Form, a file format for multi-dimensional scientific data, such as temperature
+              across a map over time. Common in climate and ocean science.</dd>
+          </div>
+          <div>
+            <dt>raster</dt>
+            <dd>A grid of equal-sized cells (pixels) where each cell holds a value. In an elevation raster, each cell
+              holds the height of the ground at that spot.</dd>
+          </div>
+        </dl>
+      </section>
+
+      <!-- FOLIO: the small running line at the foot of a magazine page -->
+      <div class="folio label"><span>Vicki Bui</span><i class="dia" aria-hidden="true"></i><span>The Features</span><i
+          class="dia" aria-hidden="true"></i><span>III</span></div>
+
+      <!-- NEXT / PREVIOUS: EDIT the links and titles -->
+      <nav class="pager label" aria-label="More features">
+        <a href="../work.html#f2">← Organization Impact Dashboard</a>
+        <a href="../work.html#f1">EPA Data ML, Analysis, &amp; Policy →</a>
+      </nav>
+
+    </main>
+    <footer id="footer"></footer>
   </div>
-</section>
-
-<!-- BODY: facts on the left, story on the right -->
-<section class="proj">
-  <aside>
-    <div class="label red tag">At a glance</div>
-    <dl class="specs label">
-      <dt>Role</dt><dd>Data Visualization Developer</dd>
-      <dt>Year</dt><dd>2026</dd>
-      <dt>Tools</dt><dd>AWS S3, AWS Glue, Python, AWS RDS (PostgreSQL)</dd>
-    </dl>
-  </aside>
-
-  <div class="article">
-    <h3>The Problem</h3>
-    <p>Earth science data comes in many formats and from many places, so it is hard to compare or visualize. The Data Visualization team needed everything in one queryable location.</p>
-
-    <h3>Extract</h3>
-    <p>Datasets for different earth layers, such as GeoTIFF for elevation and JSON for well logs, arrived through different channels, some sent in Slack and some shared through Dropbox links. They were gathered and uploaded into a single AWS S3 bucket.</p>
-
-    <h3>Transform</h3>
-    <p>Four AWS Glue jobs each handle one type of data and write Parquet files.</p>
-    <ol class="steps">
-      <li><b>Elevation rasters</b>Reads GeoTIFF elevation tiles, keeps every tenth pixel in each direction, drops “no data” pixels and converts each pixel to longitude and latitude. <span class="label">Output: one Parquet file per tile</span></li>
-      <li><b>Well logs</b>Flattens one JSON file per well into one row per measurement curve, with the well ID, unit, depth range and number of data points. Files that fail are logged and skipped. <span class="label">Output: colorado_well_logs.parquet</span></li>
-      <li><b>Joint inversion model</b>Reads 3D cell-center coordinates and two estimated values per cell, density and magnetic susceptibility, from a NumPy archive. <span class="label">Output: colorado_joint_inversion.parquet</span></li>
-      <li><b>USGS map files</b>Builds a metadata inventory of an extracted folder: file path, name, type, size and last-modified date. <span class="label">Output: gems_file_inventory.parquet</span></li>
-    </ol>
-
-    <h3>Load</h3>
-    <p>The results go into a PostgreSQL database on AWS RDS, so the Data Visualization team can query the data directly with SQL.</p>
-
-    <!-- OPTIONAL: copy a block like this for results, lessons learned, etc. -->
-    <h3>What I’d do next</h3>
-    <p>[One or two sentences on improvements, such as scheduling the jobs.]</p>
-  </div>
-</section>
-
-<!-- NEXT / PREVIOUS: EDIT the links and titles -->
-<nav class="pager label" aria-label="More features">
-  <a href="work.html#f2">← Organization Impact Dashboard</a>
-  <a href="work.html#f1">EPA Data Machine Learning and Policy →</a>
-</nav>
-
-</main>
-<footer id="footer"></footer>
-</div>
-<script src="js/main.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/slider.js"></script>
 </body>
+
 </html>
