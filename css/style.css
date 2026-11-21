@@ -36,6 +36,12 @@ h2,.h{font:400 clamp(32px,4.2vw,52px)/1.05 var(--serif);margin:0}
 .frame{position:relative;margin:0;height:var(--h,460px);background:var(--ph);color:#3f392f;display:flex;align-items:flex-end;padding:12px;overflow:hidden}
 .frame::before{content:attr(data-label);font:700 12px var(--v);letter-spacing:.06em;text-transform:uppercase}
 .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* Frame that shows the whole image, with no cropping */
+.frame.natural{display:block;height:auto;padding:0}
+.frame.natural img{position:static;display:block;width:100%;height:auto}
+.frame.natural::before{display:none}
+.frame.natural.missing{display:flex;align-items:flex-end;min-height:420px;padding:12px}
+.frame.natural.missing::before{display:block}
 .inset::after{content:"";position:absolute;inset:14px;border:1.5px solid var(--cream);pointer-events:none}
 .btn{font:700 12px/1.4 var(--v);letter-spacing:.06em;text-transform:uppercase;border:0;padding:16px 28px;cursor:pointer;display:inline-block;clip-path:var(--cut);background:var(--ink);color:var(--cream)}
 .btn:hover{background:var(--red);color:var(--cream)}
