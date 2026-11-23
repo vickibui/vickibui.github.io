@@ -1,9 +1,9 @@
 @font-face{font-family:Vanity;src:url(../fonts/Vanity-BoldWide.otf) format("opentype");font-weight:700;font-display:swap}
 @font-face{font-family:"Bodoni Moda";src:url(../fonts/BodoniModa-Roman.woff2) format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
 @font-face{font-family:"Bodoni Moda";src:url(../fonts/BodoniModa-Italic.woff2) format("woff2");font-weight:400 700;font-style:italic;font-display:swap}
-@font-face{font-family:Inter;src:url(../fonts/Inter.woff2) format("woff2");font-weight:400 600;font-style:normal;font-display:swap}
+@font-face{font-family:Archivo;src:url(../fonts/Archivo-Regular.ttf) format("truetype");font-weight:400 600;font-style:normal;font-display:swap}
 :root{--cream:#F3EFE7;--ink:#141210;--brass:#A8863A;--red:#B3202A;--mute:#5c554a;--ph:#D8D0C2;
---serif:"Bodoni Moda",serif;--sans:Inter,sans-serif;--v:Vanity,Inter,sans-serif;--pad:clamp(20px,4.4vw,56px);
+--serif:"Bodoni Moda",serif;--sans:Archivo,sans-serif;--v:Vanity,Archivo,sans-serif;--pad:clamp(20px,4.4vw,56px);
 --cut:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px));
 --cut2:polygon(0 0,calc(100% - 10.6px) 0,100% 10.6px,100% 100%,10.6px 100%,0 calc(100% - 10.6px));
 --dia:polygon(50% 0,100% 50%,50% 100%,0 50%)}
@@ -93,7 +93,7 @@ h2,.h{font:400 clamp(32px,4.2vw,52px)/1.05 var(--serif);margin:0}
 .dark .field input,.dark .field textarea{border-color:var(--cream)}.dark a:hover{color:var(--red)}
 .foot{display:flex;justify-content:center;align-items:center;gap:12px 28px;flex-wrap:wrap;text-align:center;padding:24px 0 16px;color:var(--mute)}
 @media(max-width:1100px){.foot .dia{display:none}}
-.colophon{margin:0;padding:0 0 40px;text-align:center;font-size:12px;line-height:1.7;color:var(--mute)}.colophon em{font:italic 400 14px var(--serif)}
+.colophon{margin:0;padding:0 0 40px;text-align:center;font-size:11px;line-height:1.7;color:var(--mute)}.colophon em{font:italic 400 14px var(--serif)}
 #footer{margin-top:96px}
 @media(max-width:860px){
 .split.a,.split.b,.split.c,.split.d,.arch,.about,.qa,.hero,.cards,.dark,.cols{grid-template-columns:1fr}
