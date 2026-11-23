@@ -18,7 +18,7 @@ document.getElementById("masthead").innerHTML=`<div class="top label"><span clas
 <div class="dr"></div><nav id="menu" aria-label="Main"><ul>${NAV.map(([n,h])=>`<li><a href="${h}"${page===n.toLowerCase()?' aria-current="page"':""}>${n}</a></li>`).join("")}</ul></nav><div class="dr"></div>`;
 const dia='<i class="dia" aria-hidden="true"></i>';
 document.getElementById("footer").innerHTML=`<div class="dr"></div><div class="foot label"><span>© 2026 Vicki Bui</span>${dia}<span>Available for contract and full-time roles</span>${dia}<span><a href="mailto:vickibui3@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/vickibui">LinkedIn</a> · <a href="https://github.com/vickibui">GitHub</a> · <a href="https://thegroundedtechjournal.substack.com/">Substack</a> · <a href="${ROOT}privacy.html">Privacy</a></span></div>
-<p class="colophon"><em>Colophon.</em> Set in Vanity by Hendrick Rolandez, with Bodoni Moda for headlines inspired by <i>Valley of the Dolls</i>, and Archivo for 1960s-inspired text. A quiet nod to Art Deco, my favorite style. Coded in VS Code and hosted on GitHub Pages. Issue 01, Fall 2026.</p>`;
+<p class="colophon"><em>Colophon.</em> Set in Vanity by Hendrick Rolandez, with Bodoni Moda for headlines inspired by <i>Valley of the Dolls</i>, and Archivo for 1960s-esque text. A quiet nod to Art Deco, my favorite style. Coded in VS Code and hosted on GitHub Pages. Issue 01, Fall 2026.</p>`;
 const mb=document.querySelector(".menu-btn"),nv=document.getElementById("menu");
 mb.onclick=()=>{const o=nv.classList.toggle("open");mb.setAttribute("aria-expanded",o)};
 const list=document.getElementById("list");
