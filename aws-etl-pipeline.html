@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>Work: AWS ETL Pipeline | Vicki Bui</title>
+  <title>AWS ETL Pipeline | Vicki Bui</title>
   <link rel="icon" type="image/svg+xml" href="images\Planet_Mars-cropped.svg">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/project.css">
@@ -25,10 +25,10 @@
             <div class="label red tag">PROFESSIONAL</div> <!-- EDIT: feature number and category -->
             <h1 class="proj-title">AWS ETL Pipeline</h1> <!-- EDIT: project title -->
             <p>
-              A pipeline that collects subsurface geologic data from Slack, Dropbox and other sources, 
-              stores it in AWS S3, and uses AWS Glue to convert different formats 
-              (elevation rasters, well logs, geophysical model output and file inventories) into Parquet. 
-              The results load into a PostgreSQL database on AWS RDS, 
+              A pipeline that collects subsurface geologic data from Slack, Dropbox and other sources,
+              stores it in AWS S3, and uses AWS Glue to convert different formats
+              (elevation rasters, well logs, geophysical model output and file inventories) into Parquet.
+              The results load into a PostgreSQL database on AWS RDS,
               so the Data Visualization team can query everything with SQL from one place.</p> <!-- EDIT -->
             <div class="byline label"></div>
           </div>
@@ -73,45 +73,23 @@
       </section>
 
       <!-- OPENING TEXT: two columns with a drop cap, and a fact sheet on the right -->
-      <section class="lede">
-        <div class="twocol">
-          <p class="drop">Subsurface geologic data comes in many formats and from many places, so it is hard to
-            visualize in layers without additional transformation. The Data Visualization team needed everything in one
-            queryable location.</p>
-          <h3 class="sub">Extract</h3>
-          <p>Datasets for different earth layers, such as GeoTIFF for elevation and JSON for well logs, arrived through
-            different channels, some sent in Slack and some shared through Dropbox links. They were gathered and
-            uploaded into a single AWS S3 bucket.</p>
-        </div>
-        <aside class="glance box">
-          <div class="label red tag">At a glance</div>
-          <dl class="specs label">
-            <dt>Role</dt>
-            <dd>Data Visualization Developer</dd> <!-- EDIT these rows; delete any you don't need -->
-            <dt>Year</dt>
-            <dd>2026</dd>
-            <dt>Tools</dt>
-            <dd>Python, AWS: S3, Glue, RDS (PostgreSQL)</dd>
-          </dl>
-          <!--  <p style="margin:20px 0 0"><a class="label link" href="#">View the code →</a></p>  -->
-          <!-- EDIT link, or delete this line -->
-        </aside>
-      </section>
-
-      <!-- PULL QUOTE: one big line between sections -->
-      <section class="pullq">
-        <div class="dr"></div>
-        <blockquote style="font-size:35px">Several formats in, one queryable database out.</blockquote> <!-- EDIT -->
-        <div class="dr"></div>
+      <section class="text-half">
+        <p class="drop">Subsurface geologic data comes in many formats and from many places, so it is hard to
+          visualize in layers without additional transformation. The Data Visualization team needed everything in one
+          queryable location.</p>
+        <h3 class="sub">EXTRACT</h3>
+        <p>Datasets for different earth layers, such as GeoTIFF for elevation and JSON for well logs, arrived through
+          different channels, some sent in Slack and some shared through Dropbox links. They were gathered and
+          uploaded into a single AWS S3 bucket.</p>
+        <h3 class="sub">TRANSFORM</h3>
+          <p>AWS Glue ETL Jobs, one for each kind of data.</p>
       </section>
 
       <!-- THE FOUR JOBS: copy one <article class="job"> to add another. Each has a mini visual (the <svg>). -->
       <section class="jobs-wrap">
-        <h3 class="sub">Transform</h3>
-        <p>AWS Glue ETL Jobs, one for each kind of data.</p>
         <div class="jobs">
           <article class="job">
-            <div class="num">I</div><svg class="mv" viewBox="0 0 300 120" role="img"
+            <svg class="mv" viewBox="0 0 300 120" role="img"
               aria-label="Elevation raster grid reduced to a few points, then listed as longitude, latitude and elevation">
               <title>Elevation raster grid reduced to a few points, then listed as longitude, latitude and elevation
               </title>
@@ -241,7 +219,7 @@
               converts each pixel to longitude and latitude.</p>
           </article>
           <article class="job">
-            <div class="num">II</div><svg class="mv" viewBox="0 0 300 120" role="img"
+            <svg class="mv" viewBox="0 0 300 120" role="img"
               aria-label="A borehole with three measurement curves, listed as one table row per curve">
               <title>A borehole with three measurement curves, listed as one table row per curve</title>
               <rect x="24" y="14" width="16" height="92" fill="none" stroke="#141210" stroke-width="1.2" />
@@ -303,7 +281,7 @@
               and number of data points. Files that fail are logged and skipped.</p>
           </article>
           <article class="job">
-            <div class="num">III</div><svg class="mv" viewBox="0 0 300 120" role="img"
+            <svg class="mv" viewBox="0 0 300 120" role="img"
               aria-label="Layers of a three-dimensional model grid listed as one table row per cell with x, y, z, density and susceptibility">
               <title>Layers of a three-dimensional model grid listed as one table row per cell with x, y, z, density and
                 susceptibility</title>
@@ -450,7 +428,7 @@
               from a NumPy archive.</p>
           </article>
           <article class="job">
-            <div class="num">IV</div><svg class="mv" viewBox="0 0 300 120" role="img"
+            <svg class="mv" viewBox="0 0 300 120" role="img"
               aria-label="A folder of map files listed in a table with path, type, size and modified date">
               <title>A folder of map files listed in a table with path, type, size and modified date</title>
               <path d="M12 36H40L46 28H100V100H12Z" fill="none" stroke="#141210" stroke-width="1.2" />
@@ -505,23 +483,16 @@
         </div>
       </section>
 
-      <!-- CLOSING TEXT -->
-      <section class="closing">
-        <div class="closing-grid">
-          <div>
-            <h3 class="sub">Load</h3>
-            <p>The results go into a PostgreSQL database on AWS RDS, so the Data Visualization team can query the data
-              directly with SQL.</p>
-          </div>
-          <div>
-            <h3 class="sub">What I Would Do Next</h3>
-            <p>With more time, I would automate the first step. Instead of uploading files by hand, I would pull them
-              into S3 with code, using an API where a source such as Dropbox or Slack offers one and a scheduled script
-              where it doesn't, and have the Glue ETL Jobs start automatically when new files arrive. I would also add
-              checks that flag missing or out-of-range values before anything is loaded, and store the actual well-log
-              measurements, not only the catalog of curves, so the database can answer more questions.</p>
-          </div>
-        </div>
+      <section class="text-half">
+        <h3 class="sub">LOAD</h3>
+        <p>The results go into a PostgreSQL database on AWS RDS, so the Data Visualization team can query the data
+          directly with SQL.</p>
+        <h3 class="sub">NEXT STEPS</h3>
+        <p>With more time, I would automate the first step. Instead of uploading files by hand, I would pull them
+          into S3 with code, using an API where a source such as Dropbox or Slack offers one and a scheduled script
+          where it doesn't, and have the Glue ETL Jobs start automatically when new files arrive. I would also add
+          checks that flag missing or out-of-range values before anything is loaded, and store the actual well-log
+          measurements, not only the catalog of curves, so the database can answer more questions.</p>
       </section>
 
       <section class="gloss">
