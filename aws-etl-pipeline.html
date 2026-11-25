@@ -487,12 +487,6 @@
         <h3 class="sub">LOAD</h3>
         <p>The results go into a PostgreSQL database on AWS RDS, so the Data Visualization team can query the data
           directly with SQL.</p>
-        <h3 class="sub">NEXT STEPS</h3>
-        <p>With more time, I would automate the first step. Instead of uploading files by hand, I would pull them
-          into S3 with code, using an API where a source such as Dropbox or Slack offers one and a scheduled script
-          where it doesn't, and have the Glue ETL Jobs start automatically when new files arrive. I would also add
-          checks that flag missing or out-of-range values before anything is loaded, and store the actual well-log
-          measurements, not only the catalog of curves, so the database can answer more questions.</p>
       </section>
 
       <section class="gloss">
