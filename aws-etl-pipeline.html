@@ -77,11 +77,11 @@
         <p class="drop">Subsurface geologic data comes in many formats and from many places, so it is hard to
           visualize in layers without additional transformation. The Data Visualization team needed everything in one
           queryable location.</p>
-        <h3 class="sub">EXTRACT</h3>
+        <h3 class="sub project">EXTRACT</h3>
         <p>Datasets for different earth layers, such as GeoTIFF for elevation and JSON for well logs, arrived through
           different channels, some sent in Slack and some shared through Dropbox links. They were gathered and
           uploaded into a single AWS S3 bucket.</p>
-        <h3 class="sub">TRANSFORM</h3>
+        <h3 class="sub project">TRANSFORM</h3>
           <p>AWS Glue ETL Jobs, one for each kind of data.</p>
       </section>
 
@@ -484,7 +484,7 @@
       </section>
 
       <section class="text-half">
-        <h3 class="sub">LOAD</h3>
+        <h3 class="sub project">LOAD</h3>
         <p>The results go into a PostgreSQL database on AWS RDS, so the Data Visualization team can query the data
           directly with SQL.</p>
       </section>
