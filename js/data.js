@@ -7,6 +7,7 @@ const GROUPS={
 const ARCHIVE=[
  {title:"Digital Twins",type:"Project",date:"Dec 2025",category:["Data Science","Environmental Science / Sustainability"],skills:["Data Visualization","Research","3D Modeling"],tools:["Python"]},
  {title:"Bridge Collapse Machine Learning Model",type:"Project",date:"May 2024",category:["Data Science"],skills:["Machine Learning"],tools:["Python"]},
+ {title:"Local Farm Advocacy",type:"Project",date:"Mar 2024",category:["Environmental Science / Sustainability"],skills:["Public Speaking","Research, Writing"],tools:[]},
  {title:"Bus Route Optimization",type:"Project",date:"Dec 2023",category:["Data Science"],skills:["Machine Learning","Optimization"],tools:["Python"]},
  {title:"Coastal Erosion, Wetlands, Sea Level Rise Lecture",type:"Project",date:"Dec 2023",category:["Environmental Science / Sustainability"],skills:["Public Speaking","Research"],tools:[]},
  {title:"Marketing Reach, Cost, Quality Analysis",type:"Project",date:"Aug 2023",category:["Data Science"],skills:["Data Analytics","Data Visualization","Public Speaking"],tools:["Microsoft Excel","Python","SQL"]},

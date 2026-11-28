@@ -26,10 +26,9 @@
             <h1 class="proj-title">AWS ETL Pipeline</h1> <!-- EDIT: project title -->
             <p>
               A pipeline that collects subsurface geologic data from Slack, Dropbox and other sources,
-              stores it in AWS S3, and uses AWS Glue to convert different formats
-              (elevation rasters, well logs, geophysical model output and file inventories) into Parquet.
-              The results load into a PostgreSQL database on AWS RDS,
-              so the Data Visualization team can query everything with SQL from one place.</p> <!-- EDIT -->
+              stores it in Amazon S3, and uses Python scripts in AWS Glue to convert different formats into Parquet.
+              The results load into a PostgreSQL database on Amazon RDS, so the Data Visualization team can query
+              everything with SQL from one place.</p> <!-- EDIT -->
             <div class="byline label"></div>
           </div>
 
@@ -51,7 +50,7 @@
                     <path d="M2 2l10 11L2 24" fill="none" stroke="currentColor" stroke-width="1.5" />
                   </svg></button>
               </div>
-              <figcaption>Pipeline architecture from raw files to the PostgreSQL database.</figcaption>
+              <figcaption>Database architecture diagram.</figcaption>
             </figure>
             <!-- <figure class="slide">
               <div class="stage">
@@ -74,15 +73,51 @@
 
       <!-- OPENING TEXT: two columns with a drop cap, and a fact sheet on the right -->
       <section class="text-half">
-        <p class="drop">Subsurface geologic data comes in many formats and from many places, so it is hard to
-          visualize in layers without additional transformation. The Data Visualization team needed everything in one
-          queryable location.</p>
-        <h3 class="sub project">EXTRACT</h3>
+        <p class="drop">One and a half years. That's about how long I was building 3D visualizations of
+          <b>subsurface</b> <b>geologic</b> data for a research project.
+          Our founder wanted to create <b>digital twins</b>, virtual models of the earth's layers, and each layer of the
+          model
+          came from its own set of data.
+          <br><br>
+          Every time the data for a layer changed, I had to refactor the code by hand, which was the biggest bottleneck
+          between receiving data and building the visualizations. Most layers faced 3-5 dataset adjustments, and some
+          contained 70+ individual files. Some datasets covered a different <b>area of interest (AOI)</b>, the
+          geographic region the data describes. As the different AOI's added up, it became hard to keep track of which
+          areas
+          we were working with or what data was available for the specific region. On average, each dataset took about 3
+          hours to prepare. The files also arrived through
+          informal channels like Slack and Dropbox.
+          <br><br>
+          To address this, I suggested building a database to hold all of our datasets in one centralized, organized
+          place. After researching services, I chose <b>Amazon Relational Database Service (RDS)</b>. RDS was new to the
+          team, so I took on the project and
+          built it myself.
+          <br><br>
+          A database needs data in tables, so the datasets also had to be converted into a tabular format. I was already
+          comfortable with databases like <b>MySQL Server</b> and <b>Snowflake</b>, and I was excited to turn this data
+          into
+          something more structured. After more research, I decided to collect all the datasets in a single <b>Amazon
+            Simple Storage Service (S3)</b> <b>bucket</b>
+          and use <b>AWS Glue</b> to transform them into tables for RDS.
+        </p>
+        <h3 class="sub project">"What data did you work with?"</h3>
+        <p>
+          <b>Comma-Separated Values (.csv).</b> CSV
+          <br><br>
+          <b>JavaScript Object Notation (.json).</b> JSON
+          <br><br>
+          <b>Hierarchical Data Format (.hdf).</b> HDF
+          <br><br>
+          <b>Network Common Data Form (.nc).</b> NetCDF
+          <br><br>
+          <b>GeoTIFF (.tiff).</b> GeoTIFF
+        </p>
+        <h3 class="sub project">STEP ONE: EXTRACT</h3>
         <p>Datasets for different earth layers, such as GeoTIFF for elevation and JSON for well logs, arrived through
           different channels, some sent in Slack and some shared through Dropbox links. They were gathered and
           uploaded into a single AWS S3 bucket.</p>
-        <h3 class="sub project">TRANSFORM</h3>
-          <p>AWS Glue ETL Jobs, one for each kind of data.</p>
+        <h3 class="sub project">STEP TWO: TRANSFORM</h3>
+        <p>AWS Glue ETL Jobs, one for each kind of data.</p>
       </section>
 
       <!-- THE FOUR JOBS: copy one <article class="job"> to add another. Each has a mini visual (the <svg>). -->
@@ -484,11 +519,35 @@
       </section>
 
       <section class="text-half">
-        <h3 class="sub project">LOAD</h3>
+        <h3 class="sub project">STEP THREE: LOAD</h3>
         <p>The results go into a PostgreSQL database on AWS RDS, so the Data Visualization team can query the data
           directly with SQL.</p>
+        <h3 class="sub project">"What would you improve?"</h3>
+        <p>
+          There are some limitations of the current pipeline.
+          <br><br>
+          There are many next steps to take to improve the pipeline. The highest priority improvement would be to
+          automate data extraction. I manually imported the files from places like Slack or Dropbox into S3.
+          <br><br>
+          There were other file types I had worked with previously but were not currently in use. The team
+          could come across those data formats in the future. These include: excel, shapefile, met, segy.
+          <br><br>
+          The AWS ETL Pipeline was my first time building end-to-end data infrastructure. I have learned more about data
+          engineering ever since.
+        </p>
       </section>
 
+      <!-- terms to add: 
+       Amazon Relational Database Service (RDS)
+       Amazon Simple Storage Service (S3)
+       area of interest (AOI)
+       AWS Glue
+       bucket
+       Comma-Separated Values (CSV)
+       digital twins
+       JavaScript Object Notation (JSON)
+       subsurface geology
+       -->
       <section class="gloss">
         <div class="label red tag">Glossary</div>
         <dl class="glossary">
