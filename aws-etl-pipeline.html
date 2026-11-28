@@ -102,15 +102,39 @@
         </p>
         <h3 class="sub project">"What data did you work with?"</h3>
         <p>
-          <b>Comma-Separated Values (.csv).</b> CSV
+          <b>Comma-Separated Values (.csv).</b> A CSV file is a plain-text table: each line is a row, and commas
+          separate the values in that row. It is the simplest format on this list and the closest to what the database
+          needed. Excel workbooks (.xlsx) also hold tables, but in a different format that isn't plain text, so they
+          need their own step to read.
           <br><br>
-          <b>JavaScript Object Notation (.json).</b> JSON
+          <b>JavaScript Object Notation (.json).</b> JSON stores information as labeled values and lists that can be
+          nested inside each other, which makes it flexible but not tabular. The well logs, for example, came as one
+          JSON file per well, each containing a list of measurement curves, so they had to be flattened into rows.
+          GeoJSON is a more specific type of JSON for geographic features: each entry describes a point, line or
+          polygon, along with its coordinates and any labels attached to it.
           <br><br>
-          <b>Hierarchical Data Format (.hdf).</b> HDF
+          <b>NumPy Zipped Archive (.npz).</b> NumPy is a Python library for working with grids of numbers, and an .npz
+          file bundles several of those grids, each with a name, into one compressed file. Ours held the output of a
+          joint gravity and magnetic inversion. Gravity surveys measure small changes in the pull of gravity, which
+          reflect how dense the rock below is. Magnetic surveys measure changes in the magnetic field, which reflect how
+          magnetic the rock is. An inversion works backward from those measurements to estimate what arrangement of rock
+          underground would have produced them, and doing both together is called a joint inversion. The result is a 3D
+          grid of cells, each with a location and two estimated values: density and magnetic susceptibility.
           <br><br>
-          <b>Network Common Data Form (.nc).</b> NetCDF
+          <b>Hierarchical Data Format (.hdf).</b> HDF is a container for large scientific datasets. Like a folder on a
+          computer, it holds many named datasets, usually grids of numbers, together with descriptions of what they
+          contain, all in one file. It is common for satellite data. The older HDF4 version uses the .hdf extension and
+          the newer HDF5 version uses .h5.
           <br><br>
-          <b>GeoTIFF (.tiff).</b> GeoTIFF
+          <b>Network Common Data Form (.nc).</b> NetCDF is a format for scientific data that varies across dimensions
+          such as latitude, longitude, depth and time, for example temperature across a map over many years. Each file
+          describes its own contents. It is especially common in climate and ocean science, and the newer NetCDF-4
+          version is built on top of HDF5, so the two are close relatives.
+          <br><br>
+          <b>GeoTIFF (.tif, .tiff).</b> A GeoTIFF is an image file that also records where on the Earth it sits, so
+          every pixel can be matched to a real location. It is a type of raster, a grid of cells where each cell holds a
+          value. Our elevation data, known as DEM (digital elevation model) data, was shared as GeoTIFFs, and each
+          cell's value was the height of the ground at that spot.
         </p>
         <h3 class="sub project">STEP ONE: EXTRACT</h3>
         <p>Datasets for different earth layers, such as GeoTIFF for elevation and JSON for well logs, arrived through
@@ -529,37 +553,99 @@
           There are many next steps to take to improve the pipeline. The highest priority improvement would be to
           automate data extraction. I manually imported the files from places like Slack or Dropbox into S3.
           <br><br>
-          There were other file types I had worked with previously but were not currently in use. The team
-          could come across those data formats in the future. These include: excel, shapefile, met, segy.
-          <br><br>
           The AWS ETL Pipeline was my first time building end-to-end data infrastructure. I have learned more about data
           engineering ever since.
+          <br><br>
+          There were other file types I had worked with but that weren't in use at the time, and the team could come
+          across them again. Adding transformations for them would let the database hold more of the project's data.
+          <br><br>
+          <b>Shapefile (.shp and companion files).</b> A shapefile stores geographic shapes, such as points, lines or
+          polygons, along with a table of information about each one. It is a group of files, not one: .shp holds the
+          shapes, .shx indexes them, .dbf holds the attribute table, .prj records the coordinate system, .cpg records
+          the text encoding, .sbn and .sbx are spatial indexes that speed up searches, and .qmd holds metadata written
+          by QGIS. The format was created by Esri in the 1990s, and it splits the parts into separate files so programs
+          can read only the piece they need. They must be kept together, with the same file name, or the shapefile won't
+          open correctly. We used these to define areas of interest. A shapefile is already close to a table, since the
+          .dbf has one row per shape. A Python library such as GeoPandas can read all the parts together and produce one
+          row per shape, with the attributes as columns. The shape itself can be saved as text (in a format called WKT)
+          or, with the PostGIS extension, as a true geometry column in PostgreSQL. For areas of interest, that would
+          give a small table of area name, boundary and coordinate system.
+          <br><br>
+          <b>SEG-Y (.segy, .sgy).</b> SEG-Y is the standard format for seismic data, created in 1975 by the Society of
+          Exploration Geophysicists for storage on magnetic tape. A seismic survey sends sound waves into the ground and
+          records the echoes that return from the rock layers. Each recording is called a trace: a series of
+          measurements over time. A SEG-Y file holds a text header describing the survey, a binary header, and then
+          every trace, each with its own header (including its location) followed by its values. We received our seismic
+          data in this format. It could become a table in a few ways: a catalog with one row per trace (location, number
+          of samples, sampling interval), which is small and quick to build, or a full version with one row per trace
+          and the values stored as a list. Seismic files are very large, so it would make sense to limit the full
+          version to a region or depth range, or to keep the original file in S3 and store only the catalog and a link
+          to it. Libraries such as segyio or ObsPy can read the format.
+          <br><br>
+          <b>Log ASCII Standard (.las).</b> LAS is a plain-text format for well logs: the measurements an instrument
+          records as it is lowered through a borehole. A file starts with a header that describes the well (its name,
+          location, depth range and units, and the value used to mark a missing measurement). It lists the measurement
+          curves in the file, such as natural radioactivity or electrical resistance, and then it has a block of
+          columns, with one row for each depth and one column for each curve. That layout is already close to a table,
+          so this is probably the easiest of the three formats to transform. The header could become a small table with
+          one row per well, and the measurements could go into a second table. One option is a wide table with a row per
+          depth and a column per curve, which is compact and easy to read. Another is a long table with one row per
+          depth and curve (well, depth, curve name, value), which handles wells with different sets of curves more
+          easily. Missing values should be turned into proper empty values. A Python library such as lasio can read the
+          format. This would also fix a limitation of the current well-log job, which stores a catalog of which curves
+          each well has and how many data points each one contains, but not the measurements themselves.
+          <br><br>
+          Adding these three transformations to the pipeline would be a natural next step.
         </p>
       </section>
 
-      <!-- terms to add: 
-       Amazon Relational Database Service (RDS)
-       Amazon Simple Storage Service (S3)
-       area of interest (AOI)
-       AWS Glue
-       bucket
-       Comma-Separated Values (CSV)
-       digital twins
-       JavaScript Object Notation (JSON)
-       subsurface geology
-       -->
       <section class="gloss">
         <div class="label red tag">Glossary</div>
         <dl class="glossary">
+          <div>
+            <dt>Amazon Relational Database Service (RDS)</dt>
+            <dd>An Amazon Web Services product that runs a database in the cloud and takes care of setup, backups and
+              maintenance. Data is stored in tables and can be searched with SQL.</dd>
+          </div>
+          <div>
+            <dt>Amazon Simple Storage Service (S3)</dt>
+            <dd>Amazon's cloud storage service. It stores files of any type in
+              containers called buckets, and other services can read from and write to them.</dd>
+          </div>
+          <div>
+            <dt>area of interest (AOI)</dt>
+            <dd>The geographic region a dataset covers, such as a county or a study site. Datasets from neighboring
+              areas often overlap at their edges.</dd>
+          </div>
+          <div>
+            <dt>AWS Glue</dt>
+            <dd>An Amazon Web Services tool for moving and reshaping data. You write scripts, in this project in Python,
+              that read files, convert them into another format and save the results.</dd>
+          </div>
           <div>
             <dt>borehole</dt>
             <dd>A narrow hole drilled into the ground, such as a well, that instruments can be lowered into to measure
               the rock around it.</dd>
           </div>
           <div>
+            <dt>bucket</dt>
+            <dd>A container in Amazon S3 that holds files, like a top-level folder with its own name and access
+              settings.</dd>
+          </div>
+          <div>
             <dt>cell center</dt>
             <dd>The 3D model divides the ground into many small blocks called cells. The cell center is the x, y and z
               position at the middle of one block.</dd>
+          </div>
+          <div>
+            <dt>Comma-Separated Values (CSV)</dt>
+            <dd>A plain-text file that stores a table. Each line is a row, and commas separate the values within it.
+              Spreadsheet programs and databases can open it.</dd>
+          </div>
+          <div>
+            <dt>digital twins</dt>
+            <dd>Virtual models of real places or objects, built from real data so they can be studied on a computer. In
+              this project, a digital twin of the earth's layers beneath the ground.</dd>
           </div>
           <div>
             <dt>GeMS</dt>
@@ -576,9 +662,20 @@
               arrays in one file. Common for satellite data.</dd>
           </div>
           <div>
+            <dt>JavaScript Object Notation (JSON)</dt>
+            <dd>A text format that stores information as labeled values and lists, which can be nested inside one
+              another. It is widely used to exchange data between programs. It isn't organized as rows and columns, so
+              it often has to be flattened to fit a table.</dd>
+          </div>
+          <div>
             <dt>joint inversion</dt>
             <dd>A method that uses two or more kinds of measurements together to estimate what lies underground, instead
               of interpreting each one separately.</dd>
+          </div>
+          <div>
+            <dt>Log ASCII Standard (LAS)</dt>
+            <dd>A plain-text file format for well logs. A header describes the well and its measurements, and the
+              columns below it hold one row per depth with a value for each measurement.</dd>
           </div>
           <div>
             <dt>magnetic susceptibility</dt>
@@ -599,6 +696,11 @@
             <dt>raster</dt>
             <dd>A grid of equal-sized cells (pixels) where each cell holds a value. In an elevation raster, each cell
               holds the height of the ground at that spot.</dd>
+          </div>
+          <div>
+            <dt>subsurface geology</dt>
+            <dd>The study of what lies underground: the layers of rock and sediment, what they are made of, and how they
+              are arranged beneath the surface.</dd>
           </div>
         </dl>
       </section>
