@@ -43,7 +43,7 @@
                     viewBox="0 0 14 26" aria-hidden="true">
                     <path d="M12 2L2 13l10 11" fill="none" stroke="currentColor" stroke-width="1.5" />
                   </svg></button>
-                <img src="../images/work/work-3.jpg" alt="Diagram of the pipeline"
+                <img src="../images/work/work-3.jpg" alt="Database architecture diagram"
                   onerror="this.parentNode.classList.add('missing');this.remove()">
                 <button class="arrow next" data-next aria-label="Next image"><svg width="14" height="26"
                     viewBox="0 0 14 26" aria-hidden="true">
@@ -85,13 +85,11 @@
           geographic region the data describes. As the different AOI's added up, it became hard to keep track of which
           areas
           we were working with or what data was available for the specific region. On average, each dataset took about 3
-          hours to prepare. The files also arrived through
-          informal channels like Slack and Dropbox.
+          hours to prepare. The files also arrived through informal channels like Slack and Dropbox.
           <br><br>
           To address this, I suggested building a database to hold all of our datasets in one centralized, organized
           place. After researching services, I chose <b>Amazon Relational Database Service (RDS)</b>. RDS was new to the
-          team, so I took on the project and
-          built it myself.
+          team, so I took on the project and built it myself.
           <br><br>
           A database needs data in tables, so the datasets also had to be converted into a tabular format. I was already
           comfortable with databases like <b>MySQL Server</b> and <b>Snowflake</b>, and I was excited to turn this data
@@ -102,46 +100,88 @@
         </p>
         <h3 class="sub project">"What data did you work with?"</h3>
         <p>
-          <b>Comma-Separated Values (.csv).</b> A CSV file is a plain-text table: each line is a row, and commas
-          separate the values in that row. It is the simplest format on this list and the closest to what the database
-          needed. Excel workbooks (.xlsx) also hold tables, but in a different format that isn't plain text, so they
-          need their own step to read.
+          <b>Comma-Separated Values (.csv).</b> A plain-text table where each line is a row and commas separate the
+          values. Ours included a <b>well</b> history file for oil and gas wells, and tables of well log curves, well
+          coordinates and quality summaries, which the team produced for the Colorado <b>joint inversion</b>.
           <br><br>
-          <b>JavaScript Object Notation (.json).</b> JSON stores information as labeled values and lists that can be
-          nested inside each other, which makes it flexible but not tabular. The well logs, for example, came as one
-          JSON file per well, each containing a list of measurement curves, so they had to be flattened into rows.
-          GeoJSON is a more specific type of JSON for geographic features: each entry describes a point, line or
-          polygon, along with its coordinates and any labels attached to it.
+          <b>JavaScript Object Notation (.json).</b> A format that stores labeled values and lists nested inside each
+          other. Our Colorado well logs arrived as JSON, one file per well, each containing a list of <b>measurement
+            curves</b>. <b>GeoJSON</b> is a version of JSON for geographic features, such as points, lines and polygons.
+          We had
+          GeoJSON files for oil and gas wells in Texas.
           <br><br>
-          <b>NumPy Zipped Archive (.npz).</b> NumPy is a Python library for working with grids of numbers, and an .npz
-          file bundles several of those grids, each with a name, into one compressed file. Ours held the output of a
-          joint gravity and magnetic inversion. Gravity surveys measure small changes in the pull of gravity, which
-          reflect how dense the rock below is. Magnetic surveys measure changes in the magnetic field, which reflect how
-          magnetic the rock is. An inversion works backward from those measurements to estimate what arrangement of rock
-          underground would have produced them, and doing both together is called a joint inversion. The result is a 3D
-          grid of cells, each with a location and two estimated values: density and magnetic susceptibility.
+          <b>NumPy Zipped Archive (.npz).</b> A compressed file that bundles several named grids of numbers from
+          <b>NumPy</b>,
+          a Python library. We had joint inversion results for Colorado in this format: a 3D grid of cells, each with a
+          location and two estimated values, density and <b>magnetic susceptibility</b>. <b>Gravity</b> and <b>magnetic
+            inversions</b> were
+          also delivered as separate NPZ files, each estimating one property.
           <br><br>
-          <b>Hierarchical Data Format (.hdf).</b> HDF is a container for large scientific datasets. Like a folder on a
-          computer, it holds many named datasets, usually grids of numbers, together with descriptions of what they
-          contain, all in one file. It is common for satellite data. The older HDF4 version uses the .hdf extension and
-          the newer HDF5 version uses .h5.
+          <b>Network Common Data Form (.nc).</b> A self-describing format for scientific data that varies across
+          dimensions such as latitude, longitude, depth and time. The Colorado joint inversion folder held files in this
+          format.
           <br><br>
-          <b>Network Common Data Form (.nc).</b> NetCDF is a format for scientific data that varies across dimensions
-          such as latitude, longitude, depth and time, for example temperature across a map over many years. Each file
-          describes its own contents. It is especially common in climate and ocean science, and the newer NetCDF-4
-          version is built on top of HDF5, so the two are close relatives.
+          <b>Hierarchical Data Format (.h5).</b> A container that holds many named datasets, usually grids of numbers,
+          plus descriptions of them in one file. Our <b>seismic data</b> came in this format.
           <br><br>
-          <b>GeoTIFF (.tif, .tiff).</b> A GeoTIFF is an image file that also records where on the Earth it sits, so
-          every pixel can be matched to a real location. It is a type of raster, a grid of cells where each cell holds a
-          value. Our elevation data, known as DEM (digital elevation model) data, was shared as GeoTIFFs, and each
-          cell's value was the height of the ground at that spot.
+          <b>GeoTIFF (.tif).</b> An image file that also records where on Earth it sits. It is a <b>raster</b>, a grid
+          of
+          cells, and each cell holds a value. Our elevation data for the Laramie, Wyoming acreage was a set of more than
+          70
+          GeoTIFFs, where each cell held the ground elevation at that spot, known as <b>digital elevation model
+            (DEM)</b> data.
+          The gravity and magnetic folders held a form called Cloud Optimized GeoTIFF, built so programs can read just
+          part of the file.
+          <br><br>
+          <b>Gzip (.gz).</b> A compressed file that holds one or more files in a smaller form. The gravity and magnetic
+          folders each held a gzip file containing a grid stored as plain-text rows of x, y and value: <b>Bouguer
+            anomaly</b>
+          data in one, and magnetic data in the other.
+          <br><br>
+          <b>Shapefile (.shp and companion files).</b> A group of files that stores geographic shapes with a table of
+          information about each one. We had one set per oil and gas well, one for a protected area, and others in the
+          geologic map files. The files must be kept together under the same name.
+          <br><br>
+          <b>Keyhole Markup Language (.kml).</b> A plain-text, <b>XML</b>-based format for describing places on a map.
+          The KML
+          files in the Colorado joint inversion folder outlined the AOI the inversion covers.
+          <br><br>
+          <b>Log ASCII Standard (.las).</b> A plain-text format for well logs, the measurements an instrument records as
+          it is lowered through a <b>borehole</b>. A header describes the well, followed by one row per depth and one
+          column
+          per measurement curve. We had these in both the Colorado well logs and joint inversion folders.
+          <br><br>
+          <b>USGS GeMS (geologic map files).</b> GeMS is the <b>USGS</b> standard for digital geologic maps, which
+          describe the
+          rock units at the surface and where they meet. Ours came in two forms, as shapefiles and as an <b>Esri
+            geodatabase</b>, a folder of files that together form one database. Both held the same map layers, such as
+          contacts and faults, geologic lines and map unit polygons. The geodatabase also held descriptive tables, such
+          as a description of each rock unit, the sources of the data, a glossary and rock types.
         </p>
         <h3 class="sub project">STEP ONE: EXTRACT</h3>
-        <p>Datasets for different earth layers, such as GeoTIFF for elevation and JSON for well logs, arrived through
-          different channels, some sent in Slack and some shared through Dropbox links. They were gathered and
-          uploaded into a single AWS S3 bucket.</p>
+        <p>
+          The data types uploaded to S3 were: CSV, JSON, GeoJSON, NPZ, NetCDF, HDF, GeoTIFF, gzip, shapefile, KML, LAS
+          and the USGS
+          geodatabase files.
+          <br><br>
+          Our data arrived from several scattered sources, such as Slack and Dropbox. Most of the files were shared in
+          Slack, so I collected them and uploaded them by hand. I put the files into a single Amazon S3 bucket so
+          the data would be easy to find in one place, and so the rest of the pipeline could read from it. The raw files
+          stayed in the bucket exactly as they arrived, which meant any job could be re-run from the originals.
+          <br><br>
+          In total, the data I worked with came to about 8,700 files across 6 folders, plus a few loose files. Most of
+          those files are parts of shapefiles: the oil and gas wells folder alone held about 250 well shapefiles,
+          each made up of around 24 files. The folders were organized in two ways: by area of interest AOI,
+          such as Colorado, Wyoming, or Texas, and by Earth layer, such as joint inversion or well logs. Some folders
+          were large. The GeoTIFF folder, for the Laramie acreage elevation data, held more than 70 individual files and
+          was over 2 GB.
+        </p>
         <h3 class="sub project">STEP TWO: TRANSFORM</h3>
-        <p>AWS Glue ETL Jobs, one for each kind of data.</p>
+        <p>
+          <b>Transformed with AWS Glue:</b> GeoTIFF (elevation), JSON (well logs), NPZ (joint inversion) and the USGS
+          GeMS files, which were inventoried and not converted.
+          AWS Glue ETL Jobs, one for each kind of data.
+        </p>
       </section>
 
       <!-- THE FOUR JOBS: copy one <article class="job"> to add another. Each has a mini visual (the <svg>). -->
@@ -546,6 +586,10 @@
         <h3 class="sub project">STEP THREE: LOAD</h3>
         <p>The results go into a PostgreSQL database on AWS RDS, so the Data Visualization team can query the data
           directly with SQL.</p>
+        <h3 class="sub project">"What did you learn?"</h3>
+        <p>
+          This was my first time having to build infrastructure while accounting for security risks.
+        </p>
         <h3 class="sub project">"What would you improve?"</h3>
         <p>
           There are some limitations of the current pipeline.
@@ -559,46 +603,12 @@
           There were other file types I had worked with but that weren't in use at the time, and the team could come
           across them again. Adding transformations for them would let the database hold more of the project's data.
           <br><br>
-          <b>Shapefile (.shp and companion files).</b> A shapefile stores geographic shapes, such as points, lines or
-          polygons, along with a table of information about each one. It is a group of files, not one: .shp holds the
-          shapes, .shx indexes them, .dbf holds the attribute table, .prj records the coordinate system, .cpg records
-          the text encoding, .sbn and .sbx are spatial indexes that speed up searches, and .qmd holds metadata written
-          by QGIS. The format was created by Esri in the 1990s, and it splits the parts into separate files so programs
-          can read only the piece they need. They must be kept together, with the same file name, or the shapefile won't
-          open correctly. We used these to define areas of interest. A shapefile is already close to a table, since the
-          .dbf has one row per shape. A Python library such as GeoPandas can read all the parts together and produce one
-          row per shape, with the attributes as columns. The shape itself can be saved as text (in a format called WKT)
-          or, with the PostGIS extension, as a true geometry column in PostgreSQL. For areas of interest, that would
-          give a small table of area name, boundary and coordinate system.
-          <br><br>
-          <b>SEG-Y (.segy, .sgy).</b> SEG-Y is the standard format for seismic data, created in 1975 by the Society of
-          Exploration Geophysicists for storage on magnetic tape. A seismic survey sends sound waves into the ground and
-          records the echoes that return from the rock layers. Each recording is called a trace: a series of
-          measurements over time. A SEG-Y file holds a text header describing the survey, a binary header, and then
-          every trace, each with its own header (including its location) followed by its values. We received our seismic
-          data in this format. It could become a table in a few ways: a catalog with one row per trace (location, number
-          of samples, sampling interval), which is small and quick to build, or a full version with one row per trace
-          and the values stored as a list. Seismic files are very large, so it would make sense to limit the full
-          version to a region or depth range, or to keep the original file in S3 and store only the catalog and a link
-          to it. Libraries such as segyio or ObsPy can read the format.
-          <br><br>
-          <b>Log ASCII Standard (.las).</b> LAS is a plain-text format for well logs: the measurements an instrument
-          records as it is lowered through a borehole. A file starts with a header that describes the well (its name,
-          location, depth range and units, and the value used to mark a missing measurement). It lists the measurement
-          curves in the file, such as natural radioactivity or electrical resistance, and then it has a block of
-          columns, with one row for each depth and one column for each curve. That layout is already close to a table,
-          so this is probably the easiest of the three formats to transform. The header could become a small table with
-          one row per well, and the measurements could go into a second table. One option is a wide table with a row per
-          depth and a column per curve, which is compact and easy to read. Another is a long table with one row per
-          depth and curve (well, depth, curve name, value), which handles wells with different sets of curves more
-          easily. Missing values should be turned into proper empty values. A Python library such as lasio can read the
-          format. This would also fix a limitation of the current well-log job, which stores a catalog of which curves
-          each well has and how many data points each one contains, but not the measurements themselves.
-          <br><br>
           Adding these three transformations to the pipeline would be a natural next step.
         </p>
       </section>
+      <!-- terms to add:
 
+       -->
       <section class="gloss">
         <div class="label red tag">Glossary</div>
         <dl class="glossary">
@@ -628,6 +638,11 @@
               the rock around it.</dd>
           </div>
           <div>
+            <dt>Bouguer anomaly</dt>
+            <dd>A gravity measurement that has been corrected for the effects of elevation and the surrounding terrain.
+              What remains reflects differences in the density of the rock underground.</dd>
+          </div>
+          <div>
             <dt>bucket</dt>
             <dd>A container in Amazon S3 that holds files, like a top-level folder with its own name and access
               settings.</dd>
@@ -643,18 +658,47 @@
               Spreadsheet programs and databases can open it.</dd>
           </div>
           <div>
+            <dt>digital elevation model (DEM)</dt>
+            <dd>A grid of ground elevation values, where each cell holds the height of the land at that location.</dd>
+          </div>
+          <div>
             <dt>digital twins</dt>
             <dd>Virtual models of real places or objects, built from real data so they can be studied on a computer. In
               this project, a digital twin of the earth's layers beneath the ground.</dd>
+          </div>
+          <div>
+            <dt>Esri geodatabase</dt>
+            <dd>A database format from Esri, the company behind ArcGIS, for storing geographic data. A file geodatabase
+              is a folder of files that together hold map layers and tables.</dd>
+          </div>
+          <div>
+            <dt>extensible markup language (XML)</dt>
+            <dd>A text format that labels data with tags, so that both people and programs can read how the data is
+              organized. Keyhole Markup Language (KML) is built on it.</dd>
           </div>
           <div>
             <dt>GeMS</dt>
             <dd>Geologic Map Schema, the USGS standard format for publishing digital geologic maps.</dd>
           </div>
           <div>
+            <dt>GeoJSON</dt>
+            <dd>A version of JSON for geographic features. Each entry describes a point, line or polygon, along with its
+              coordinates and any labels attached to it.</dd>
+          </div>
+          <div>
             <dt>GeoTIFF</dt>
             <dd>An image file that also stores geographic location, so every pixel can be placed on the Earth. Often
               used for elevation maps and satellite images.</dd>
+          </div>
+          <div>
+            <dt>gravity inversion</dt>
+            <dd>A method that works backward from gravity measurements to estimate how dense the rock is at different
+              places underground.</dd>
+          </div>
+          <div>
+            <dt>gzip</dt>
+            <dd>A compression format that shrinks a file into a smaller one, usually ending in .gz. The file has to be
+              unpacked before it can be used.</dd>
           </div>
           <div>
             <dt>HDF</dt>
@@ -673,9 +717,19 @@
               of interpreting each one separately.</dd>
           </div>
           <div>
+            <dt>Keyhole Markup Language (KML)</dt>
+            <dd>A text format, based on XML, for describing places on a map, such as points, lines and outlined areas.
+              It was created for Google Earth.</dd>
+          </div>
+          <div>
             <dt>Log ASCII Standard (LAS)</dt>
             <dd>A plain-text file format for well logs. A header describes the well and its measurements, and the
               columns below it hold one row per depth with a value for each measurement.</dd>
+          </div>
+          <div>
+            <dt>magnetic inversion</dt>
+            <dd>A method that works backward from magnetic measurements to estimate how magnetic the rock is at
+              different places underground.</dd>
           </div>
           <div>
             <dt>magnetic susceptibility</dt>
@@ -688,9 +742,21 @@
               resistance.</dd>
           </div>
           <div>
+            <dt>MySQL Server</dt>
+            <dd>An open-source database system that stores data in tables and is queried with SQL.</dd>
+          </div>
+          <div>
             <dt>netCDF</dt>
             <dd>Network Common Data Form, a file format for multi-dimensional scientific data, such as temperature
               across a map over time. Common in climate and ocean science.</dd>
+          </div>
+          <div>
+            <dt>NumPy</dt>
+            <dd>A Python library for working with grids of numbers.</dd>
+          </div>
+          <div>
+            <dt>NumPy Zipped Archive (npz)</dt>
+            <dd>A compressed file that bundles several named NumPy grids of numbers into one file.</dd>
           </div>
           <div>
             <dt>raster</dt>
@@ -698,9 +764,38 @@
               holds the height of the ground at that spot.</dd>
           </div>
           <div>
+            <dt>seismic data</dt>
+            <dd>Recordings of sound waves sent into the ground and reflected back from rock layers. They show where the
+              layers change and are used to map what lies underground.</dd>
+          </div>
+          <div>
+            <dt>shapefile</dt>
+            <dd>A format from Esri that stores geographic shapes, such as points, lines and polygons, along with a table
+              of information about each one. It is a group of files that must be kept together.</dd>
+          </div>
+          <div>
+            <dt>Snowflake</dt>
+            <dd>A cloud platform for storing and analyzing large amounts of data using SQL.</dd>
+          </div>
+          <div>
             <dt>subsurface geology</dt>
             <dd>The study of what lies underground: the layers of rock and sediment, what they are made of, and how they
               are arranged beneath the surface.</dd>
+          </div>
+          <div>
+            <dt>traces</dt>
+            <dd>In seismic data, a trace is one recording of echoes at a single location, stored as a series of
+              measurements over time.</dd>
+          </div>
+          <div>
+            <dt>USGS</dt>
+            <dd>The United States Geological Survey, a federal science agency that studies the country's land, water and
+              geology. It publishes geologic maps and data.</dd>
+          </div>
+          <div>
+            <dt>well</dt>
+            <dd>A hole drilled into the ground, such as to produce oil or gas or to measure the properties of the rock.
+              Well logs are the measurements recorded along it.</dd>
           </div>
         </dl>
       </section>

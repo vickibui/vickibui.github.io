@@ -71,6 +71,3 @@ h3.sub{font:400 clamp(24px,2.6vw,32px)/1.1 var(--serif);margin:28px 0 12px}
 .closing-grid>div:first-child{padding-right:0;padding-bottom:28px}
 .closing-grid>div+div{padding-left:0;border-left:0;padding-top:28px;border-top:1px solid var(--brass)}
 }
-
-/* bold text */
-strong,b{font-weight:600}

@@ -115,6 +115,7 @@ h2,.h{font:400 clamp(32px,4.2vw,52px)/1.05 var(--serif);margin:0}
 .dark.feature-block{flex-direction:column;flex-wrap:nowrap}
 .dark.feature-block .feature-media,.dark.feature-block .home-text{flex:none;width:100%;min-width:0}
 .dark.feature-block.reverse .feature-media{order:-1}
+.text-half{width:100%;margin:0 auto}
 .foot .dia{display:none}}
 .colophon{margin:0;padding:0 0 40px;text-align:center;font-size:11px;line-height:1.7;color:var(--mute)}.colophon em{font:italic 400 14px var(--serif)}
 #footer{margin-top:96px}
